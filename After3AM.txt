@@ -1,5 +1,3 @@
-local v0=game:GetService("Players");local v1=game:GetService("RunService");local v2=v0.LocalPlayer;local function v3(v57) local v58=0;local v59;while true do if (v58==(0 -0)) then v59=0 + 0 ;while true do if ((0 + 0)==v59) then if v57 then return v57:FindFirstChild("HumanoidRootPart");end return nil;end end break;end end end local function v4(v60) pcall(function() if (v60 and v60.Parent) then v60:Destroy();end end);end local v5=loadstring(game:HttpGet("https://sirius.menu/rayfield"))();local v6=v5:CreateWindow({Name="After 3 AM | by Chefin",LoadingTitle="After 3 AM",LoadingSubtitle="by Chefin",ConfigurationSaving={Enabled=true,FolderName="Chefin_After3AM",FileName="ESP_Config"},Discord={Enabled=false,Invite="",RememberJoins=true},KeySystem=false});local v7=v6:CreateTab("ESP",4483362458);local v8=v6:CreateTab("OP",4483363353 -(199 + 696) );local v9=UDim2.new(126 -(116 + 10) ,11 + 129 ,0,774 -(542 + 196) );local v10=12;local v11=Vector3.new(0 -0 ,1.7999999999999998 + 1 ,0 + 0 );local v12=false;local v13={};local v14={};local v15={};local function v16() local v61=0 + 0 ;while true do if (v61==(0 -0)) then for v264,v265 in ipairs(v13) do pcall(function() v265:Disconnect();end);end v13={};break;end end end local function v17() local v190=0 -0 ;local v191;while true do if (v190==(0 -0)) then v191=0 + 0 ;while true do if (v191==(1551 -(1126 + 425))) then for v349,v350 in pairs(v14) do v4(v350);end v14={};v191=406 -(118 + 287) ;end if (v191==(3 -2)) then for v351,v352 in pairs(v15) do v4(v352);end v15={};v191=1123 -(118 + 1003) ;end if (v191==(6 -4)) then v16();break;end end break;end end end local function v18(v62) local v63=0 -0 ;local v64;while true do if (v63==(380 -(142 + 235))) then v64.Parent=v62;v14[v62]=v64;break;end if (v63==(0 -0)) then if ( not v62 or  not v62.Parent) then return;end if v14[v62] then return;end v64=Instance.new("Highlight");v63=1;end if (v63==2) then local v205=0 + 0 ;while true do if (v205==1) then v64.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;v63=980 -(553 + 424) ;break;end if (v205==(0 -0)) then v64.OutlineTransparency=1 + 0 ;v64.FillColor=Color3.fromRGB(253 + 2 ,0 + 0 ,0 + 0 );v205=1 + 0 ;end end end if (v63==(2 -1)) then local v206=0 -0 ;while true do if (v206==0) then v64.Name="Chefin_ShadowMan_Highlight";v64.Adornee=v62;v206=2 -1 ;end if (v206==1) then v64.FillTransparency=0.25 + 0 ;v63=9 -7 ;break;end end end end end local function v19(v65) local v66=0;local v67;local v68;local v69;while true do if (v66==(756 -(239 + 514))) then v69.Name="Label";v69.BackgroundTransparency=1 + 0 ;v69.Size=UDim2.new(1330 -(797 + 532) ,0 + 0 ,1 + 0 ,0);v69.TextScaled=false;v66=9 -5 ;end if (v66==(1203 -(373 + 829))) then v68=Instance.new("BillboardGui");v68.Name="Chefin_ShadowMan_Billboard";v68.Adornee=v67;v68.AlwaysOnTop=true;v66=2;end if (v66==(736 -(476 + 255))) then v69.TextStrokeColor3=Color3.fromRGB(0,0,1130 -(369 + 761) );v69.TextWrapped=true;v69.TextYAlignment=Enum.TextYAlignment.Top;v69.TextXAlignment=Enum.TextXAlignment.Center;v66=6;end if (v66==4) then v69.TextSize=v10;v69.Font=Enum.Font.GothamBold;v69.TextColor3=Color3.fromRGB(148 + 107 ,0 -0 ,0 -0 );v69.TextStrokeTransparency=238 -(64 + 174) ;v66=5;end if ((1 + 5)==v66) then v69.Text="ShadowMan\nDistância: ?m\nSaúde: ?";v69.Parent=v68;v68.Parent=v65;v15[v65]=v68;break;end if (v66==(2 -0)) then v68.Size=v9;v68.StudsOffset=v11;v68.MaxDistance=1000335 -(144 + 192) ;v69=Instance.new("TextLabel");v66=219 -(42 + 174) ;end if (v66==0) then if ( not v65 or  not v65.Parent) then return;end if v15[v65] then return;end v67=v65:FindFirstChild("HumanoidRootPart") or v65:FindFirstChild("Head") or v65:FindFirstChildWhichIsA("BasePart") ;if  not v67 then return;end v66=1 + 0 ;end end end local function v20(v70) local v71=0 + 0 ;local v72;local v73;local v74;while true do if (v71==1) then local v232=0 + 0 ;while true do if (v232==(1504 -(363 + 1141))) then v73=v72:FindFirstChild("Label");if  not v73 then return;end v232=1581 -(1183 + 397) ;end if (v232==(2 -1)) then v71=2 + 0 ;break;end end end if (v71==2) then v74=nil;v74=v1.RenderStepped:Connect(function() if  not v12 then local v310=0 + 0 ;local v311;while true do if (v310==(1975 -(1913 + 62))) then v311=0;while true do if (v311==(0 + 0)) then if v74 then v74:Disconnect();end return;end end break;end end end if ( not v70 or  not v70.Parent) then local v312=0;while true do if (v312==(0 -0)) then if v74 then v74:Disconnect();end return;end end end local v266=v3(v2.Character);local v267=v70:FindFirstChild("HumanoidRootPart") or v70:FindFirstChild("Head") or v70:FindFirstChildWhichIsA("BasePart") ;local v268=v70:FindFirstChildOfClass("Humanoid");local v269="Distância: ?m";if (v266 and v267) then local v313=0;local v314;while true do if (v313==0) then v314=(v266.Position-v267.Position).Magnitude;v269=("Distância: %.0fm"):format(v314);break;end end end local v270="Saúde: ?";if v268 then v270=("Saúde: %.0f"):format(v268.Health);end v73.Text="ShadowMan\n"   .. v269   .. "\n"   .. v270 ;end);v71=3;end if (3==v71) then table.insert(v13,v74);break;end if (v71==(1933 -(565 + 1368))) then v72=v15[v70];if  not v72 then return;end v71=3 -2 ;end end end local function v21() local v75=1661 -(1477 + 184) ;local v76;local v77;local v78;while true do if (v75==(1 -0)) then v78=nil;while true do if (v76==(2 + 0)) then if  not v78 then return;end v18(v78);v76=859 -(564 + 292) ;end if (v76==0) then if  not v12 then return;end v77=workspace:FindFirstChild("CurrentMonsters");v76=1;end if (v76==(4 -1)) then v19(v78);v20(v78);break;end if (v76==(2 -1)) then if  not v77 then return;end v78=v77:FindFirstChild("ShadowMan");v76=306 -(244 + 60) ;end end break;end if (v75==(0 + 0)) then v76=0;v77=nil;v75=1;end end end local function v22() local v79=476 -(41 + 435) ;local v80;local v81;local v82;while true do if (v79==(1001 -(938 + 63))) then v80=0 + 0 ;v81=nil;v79=1126 -(936 + 189) ;end if (v79==(1 + 0)) then v82=nil;while true do if (v80==0) then local v315=1613 -(1565 + 48) ;while true do if (v315==(0 + 0)) then v81=workspace:FindFirstChild("CurrentMonsters");if  not v81 then return;end v315=1;end if ((1139 -(782 + 356))==v315) then v80=1;break;end end end if (v80==1) then v82=v81.ChildAdded:Connect(function(v336) local v337=267 -(176 + 91) ;while true do if ((0 -0)==v337) then if  not v12 then return;end if (v336.Name=="ShadowMan") then local v365=0 -0 ;while true do if ((1092 -(975 + 117))==v365) then task.wait(1875.15 -(157 + 1718) );v21();break;end end end break;end end end);table.insert(v13,v82);break;end end break;end end end local v23=false;local v24={};local v25={};local v26={};local function v27() local v83=0 + 0 ;local v84;while true do if (v83==(0 -0)) then v84=0;while true do if (v84==0) then for v338,v339 in ipairs(v24) do pcall(function() v339:Disconnect();end);end v24={};break;end end break;end end end local function v28() local v85=0 -0 ;while true do if (v85==2) then v27();break;end if (v85==1) then v25={};v26={};v85=1020 -(697 + 321) ;end if (v85==(0 -0)) then for v272,v273 in pairs(v25) do v4(v273);end for v274,v275 in pairs(v26) do v4(v275);end v85=1 -0 ;end end end local function v29(v86) local v87=0;local v88;while true do if (v87==(0 -0)) then if ( not v86 or  not v86.Parent) then return;end if v25[v86] then return;end v88=Instance.new("Highlight");v87=1 + 0 ;end if (v87==(3 -1)) then v88.OutlineTransparency=2 -1 ;v88.FillColor=Color3.fromRGB(1227 -(322 + 905) ,255,866 -(602 + 9) );v88.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;v87=3;end if (v87==(1190 -(449 + 740))) then v88.Name="Chefin_Player_Highlight";v88.Adornee=v86;v88.FillTransparency=0.25;v87=874 -(826 + 46) ;end if (v87==3) then v88.Parent=v86;v25[v86]=v88;break;end end end local function v30(v89,v90) if ( not v89 or  not v89.Parent) then return;end if v26[v89] then return;end local v91=v89:FindFirstChild("HumanoidRootPart") or v89:FindFirstChild("Head") or v89:FindFirstChildWhichIsA("BasePart") ;if  not v91 then return;end local v92=Instance.new("BillboardGui");v92.Name="Chefin_Player_Billboard";v92.Adornee=v91;v92.AlwaysOnTop=true;v92.Size=v9;v92.StudsOffset=v11;v92.MaxDistance=999999;local v99=Instance.new("TextLabel");v99.Name="Label";v99.BackgroundTransparency=948 -(245 + 702) ;v99.Size=UDim2.new(3 -2 ,0 + 0 ,1899 -(260 + 1638) ,440 -(382 + 58) );v99.TextScaled=false;v99.TextSize=v10;v99.Font=Enum.Font.GothamBold;v99.TextColor3=Color3.fromRGB(0 -0 ,212 + 43 ,526 -271 );v99.TextStrokeTransparency=0 -0 ;v99.TextStrokeColor3=Color3.fromRGB(1205 -(902 + 303) ,0,0 -0 );v99.TextWrapped=true;v99.TextYAlignment=Enum.TextYAlignment.Top;v99.TextXAlignment=Enum.TextXAlignment.Center;v99.Text=v90   .. "\nDistância: ?m" ;v99.Parent=v92;v92.Parent=v89;v26[v89]=v92;end local function v31(v119,v120) local v121=0 -0 ;local v122;local v123;local v124;while true do if ((1 + 2)==v121) then table.insert(v24,v124);break;end if (v121==0) then v122=v26[v119];if  not v122 then return;end v121=1691 -(1121 + 569) ;end if ((215 -(22 + 192))==v121) then v123=v122:FindFirstChild("Label");if  not v123 then return;end v121=685 -(483 + 200) ;end if (v121==(1465 -(1404 + 59))) then v124=nil;v124=v1.RenderStepped:Connect(function() local v276=0;local v277;local v278;local v279;while true do if (v276==(2 -1)) then v277=v3(v2.Character);v278=v3(v119);v276=2;end if (v276==2) then local v340=0 -0 ;while true do if (v340==(766 -(468 + 297))) then v276=565 -(334 + 228) ;break;end if (v340==0) then v279="Distância: ?m";if (v277 and v278) then local v366=0;local v367;while true do if ((0 -0)==v366) then v367=(v277.Position-v278.Position).Magnitude;v279=("Distância: %.0fm"):format(v367);break;end end end v340=2 -1 ;end end end if (v276==0) then if  not v23 then local v357=0;while true do if (v357==0) then if v124 then v124:Disconnect();end return;end end end if ( not v119 or  not v119.Parent) then local v358=0 -0 ;while true do if (0==v358) then if v124 then v124:Disconnect();end return;end end end v276=1 + 0 ;end if (v276==(239 -(141 + 95))) then v123.Text=v120   .. "\n"   .. v279 ;break;end end end);v121=3;end end end local function v32(v125) local v126=0 + 0 ;local v127;while true do if (v126==(4 -2)) then v29(v127);v30(v127,v125.Name);v126=3;end if (v126==3) then v31(v127,v125.Name);break;end if (v126==(0 -0)) then if  not v23 then return;end if (v125==v2) then return;end v126=1 + 0 ;end if (v126==(2 -1)) then v127=v125.Character;if  not v127 then return;end v126=2 + 0 ;end end end local function v33() local v128=0;local v129;local v130;while true do if (v128==(1 + 0)) then table.insert(v24,v129);table.insert(v24,v130);v128=2 -0 ;end if (v128==(2 + 0)) then for v280,v281 in ipairs(v0:GetPlayers()) do if (v281~=v2) then local v316=0;local v317;while true do if (v316==0) then if v281.Character then v32(v281);end v317=v281.CharacterAdded:Connect(function() local v361=163 -(92 + 71) ;while true do if (v361==(0 + 0)) then task.wait(0.2);v32(v281);break;end end end);v316=1 -0 ;end if (v316==(766 -(574 + 191))) then table.insert(v24,v317);break;end end end end break;end if (v128==0) then v129=v0.PlayerAdded:Connect(function(v282) local v283=0 + 0 ;local v284;while true do if (v283==(2 -1)) then v284=v282.CharacterAdded:Connect(function() local v353=0 + 0 ;while true do if (v353==(849 -(254 + 595))) then task.wait(126.2 -(55 + 71) );v32(v282);break;end end end);table.insert(v24,v284);break;end if (v283==0) then if  not v23 then return;end v284=nil;v283=1 -0 ;end end end);v130=v0.PlayerRemoving:Connect(function(v285) if v285.Character then local v318=1790 -(573 + 1217) ;while true do if (v318==(2 -1)) then v25[v285.Character]=nil;v26[v285.Character]=nil;break;end if (v318==0) then v4(v25[v285.Character]);v4(v26[v285.Character]);v318=1 + 0 ;end end end end);v128=1 -0 ;end end end local v34=false;local v35={};local v36={};local v37={};local function v38() local v131=0;while true do if (v131==(939 -(714 + 225))) then for v286,v287 in ipairs(v35) do pcall(function() v287:Disconnect();end);end v35={};break;end end end local function v39() local v132=0 -0 ;while true do if (v132==(1 -0)) then v36={};v37={};v132=2;end if (v132==(1 + 1)) then v38();break;end if (v132==0) then for v288,v289 in pairs(v36) do v4(v289);end for v290,v291 in pairs(v37) do v4(v291);end v132=1 -0 ;end end end local function v40(v133) if ( not v133 or  not v133.Parent) then return;end if v36[v133] then return;end local v134=Instance.new("Highlight");v134.Name="Chefin_Item_Highlight";v134.Adornee=v133;v134.FillTransparency=806.25 -(118 + 688) ;v134.OutlineTransparency=1;v134.FillColor=Color3.fromRGB(48 -(25 + 23) ,50 + 205 ,1886 -(927 + 959) );v134.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop;v134.Parent=v133;v36[v133]=v134;end local function v41(v144) local v145=0;local v146;local v147;local v148;while true do if ((3 -2)==v145) then if  not v146 then return;end v147=Instance.new("BillboardGui");v147.Name="Chefin_Item_Billboard";v145=734 -(16 + 716) ;end if (v145==4) then local v246=0 -0 ;while true do if (v246==0) then v148.Name="Label";v148.BackgroundTransparency=98 -(11 + 86) ;v246=1;end if (v246==(2 -1)) then v148.Size=UDim2.new(1,285 -(175 + 110) ,2 -1 ,0);v145=5;break;end end end if (v145==(0 -0)) then if ( not v144 or  not v144.Parent) then return;end if v37[v144] then return;end v146=v144:FindFirstChild("Handle") or v144:FindFirstChild("HumanoidRootPart") or v144:FindFirstChildWhichIsA("BasePart") ;v145=1797 -(503 + 1293) ;end if (v145==(25 -16)) then v37[v144]=v147;break;end if (v145==8) then local v248=0;while true do if (v248==(1 + 0)) then v147.Parent=v144;v145=9;break;end if ((1061 -(810 + 251))==v248) then v148.Text=v144.Name;v148.Parent=v147;v248=1 + 0 ;end end end if (7==v145) then v148.TextWrapped=true;v148.TextYAlignment=Enum.TextYAlignment.Center;v148.TextXAlignment=Enum.TextXAlignment.Center;v145=8;end if (v145==(1 + 2)) then v147.StudsOffset=Vector3.new(0 + 0 ,534.8 -(43 + 490) ,733 -(711 + 22) );v147.MaxDistance=3868202 -2868203 ;v148=Instance.new("TextLabel");v145=863 -(240 + 619) ;end if (5==v145) then local v256=0;while true do if ((1 + 0)==v256) then v148.Font=Enum.Font.GothamBold;v145=9 -3 ;break;end if ((0 + 0)==v256) then v148.TextScaled=false;v148.TextSize=1756 -(1344 + 400) ;v256=406 -(255 + 150) ;end end end if (v145==6) then local v257=0 + 0 ;while true do if ((0 + 0)==v257) then v148.TextColor3=Color3.fromRGB(0 -0 ,823 -568 ,1739 -(404 + 1335) );v148.TextStrokeTransparency=0;v257=407 -(183 + 223) ;end if (v257==(1 -0)) then v148.TextStrokeColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0);v145=344 -(10 + 327) ;break;end end end if (v145==2) then v147.Adornee=v146;v147.AlwaysOnTop=true;v147.Size=UDim2.new(0 + 0 ,140,0,362 -(118 + 220) );v145=1 + 2 ;end end end local function v42(v149) local v150=449 -(108 + 341) ;local v151;while true do if (v150==(0 + 0)) then v151=0 -0 ;while true do if (v151==0) then if  not v34 then return;end if ( not v149 or  not v149.Parent) then return;end v151=1494 -(711 + 782) ;end if (v151==(1 -0)) then v40(v149);v41(v149);break;end end break;end end end local function v43() local v152=469 -(270 + 199) ;local v153;local v154;local v155;while true do if (v152==(1 + 1)) then v155=v153.ChildRemoved:Connect(function(v292) local v293=1819 -(580 + 1239) ;local v294;while true do if (v293==(0 -0)) then v294=0;while true do if (v294==(1 + 0)) then v36[v292]=nil;v37[v292]=nil;break;end if (v294==(0 + 0)) then v4(v36[v292]);v4(v37[v292]);v294=1;end end break;end end end);table.insert(v35,v154);v152=3;end if (v152==(1 + 0)) then for v295,v296 in ipairs(v153:GetChildren()) do v42(v296);end v154=v153.ChildAdded:Connect(function(v297) local v298=0 -0 ;while true do if (v298==(0 + 0)) then if  not v34 then return;end task.wait(1167.05 -(645 + 522) );v298=1791 -(1010 + 780) ;end if ((1 + 0)==v298) then v42(v297);break;end end end);v152=9 -7 ;end if ((0 -0)==v152) then v153=workspace:FindFirstChild("Pickups");if  not v153 then return;end v152=1837 -(1045 + 791) ;end if (v152==(7 -4)) then table.insert(v35,v155);break;end end end v8:CreateButton({Name="Set Shotgun Ammo",Callback=function() local v156=0 -0 ;local v157;while true do if ((505 -(351 + 154))==v156) then v157={"Shotgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Shotgun"),1000266 -(28 + 238) };game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(v157));break;end end end});v8:CreateButton({Name="Set Handgun Ammo",Callback=function() local v158=0 -0 ;local v159;while true do if ((1559 -(1381 + 178))==v158) then v159={"Handgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Handgun"),806341 + 193659 };game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(v159));break;end end end});local v44=false;local v45="Shotgun";local function v46() local v160=0 + 0 ;local v161;local v162;while true do local v192=0;while true do if (v192==1) then if (v160==(6 -4)) then return v162:FindFirstChild("Head");end break;end if (v192==(0 + 0)) then if (v160==1) then v162=v161:FindFirstChild("ShadowMan");if  not v162 then return nil;end v160=2;end if ((470 -(381 + 89))==v160) then v161=workspace:FindFirstChild("CurrentMonsters");if  not v161 then return nil;end v160=1;end v192=1 + 0 ;end end end end local function v47(v163) local v164=0 + 0 ;local v165;local v166;local v167;local v168;local v169;while true do if (v164==(0 -0)) then v165=v46();if  not v165 then return;end v166=nil;v164=1157 -(1074 + 82) ;end if ((6 -3)==v164) then v169={v165,Vector3.new(56.75334167480469,19.881412506103516 + 26 , -343.3638916015625)};pcall(function() v168:FireServer(unpack(v169));end);break;end if (v164==1) then local v261=0 + 0 ;while true do if (v261==0) then v167=v2:FindFirstChild("Backpack");if v167 then v166=v167:FindFirstChild(v163);end v261=1;end if (v261==1) then if  not v166 then local v354=0;local v355;while true do if (v354==(0 + 0)) then v355=v2.Character;if v355 then v166=v355:FindFirstChild(v163);end break;end end end v164=7 -5 ;break;end end end if (v164==(1728 -(1668 + 58))) then if  not v166 then return;end v168=v166:FindFirstChild("DamageTargetEvent");if  not v168 then return;end v164=3;end end end v8:CreateDropdown({Name="Kill Mode",Options={"Shotgun","Handgun"},CurrentOption={"Shotgun"},Flag="Chefin_KillMode",Callback=function(v170) if (typeof(v170)=="table") then v45=v170[1];else v45=tostring(v170);end end});v8:CreateToggle({Name="KillShadowMan",CurrentValue=false,Flag="Chefin_KillShadowMan",Callback=function(v171) v44=v171;end});local v0=game:GetService("Players");local v1=game:GetService("RunService");local v2=v0.LocalPlayer;local v48=false;local v49=nil;local v50=nil;local v51=nil;local function v52() local v172=workspace:FindFirstChild("CurrentMonsters");if  not v172 then return nil;end return v172:FindFirstChild("ShadowMan");end local function v53() local v173=workspace.CurrentCamera;if  not v173 then return;end v49=v173.CameraSubject;v50=v173.CameraType;end local function v54() local v176=workspace.CurrentCamera;if  not v176 then return;end if v49 then local v200=0 -0 ;while true do if (1==v200) then return;end if (v200==0) then v176.CameraType=v50 or Enum.CameraType.Custom ;v176.CameraSubject=v49;v200=1 -0 ;end end end local v177=v2.Character;if v177 then local v201=v177:FindFirstChildOfClass("Humanoid");if v201 then local v299=0;while true do if (v299==(0 -0)) then v176.CameraType=Enum.CameraType.Custom;v176.CameraSubject=v201;break;end end end end end local function v55() local v178=0;while true do if ((0 + 0)==v178) then if v51 then v51:Disconnect();v51=nil;end v54();break;end end end local function v56() local v179=workspace.CurrentCamera;if  not v179 then return;end v53();if v51 then local v202=0;while true do if (v202==(0 + 0)) then v51:Disconnect();v51=nil;break;end end end v51=v1.RenderStepped:Connect(function() if  not v48 then return;end local v193=workspace.CurrentCamera;if  not v193 then return;end local v194=v52();if  not v194 then local v262=0 + 0 ;while true do if (0==v262) then local v333=0;while true do if (v333==(0 -0)) then v54();return;end end end end end local v195=v194:FindFirstChild("Head");if  not v195 then local v263=0;while true do if (v263==(1994 -(109 + 1885))) then v54();return;end end end v193.CameraType=Enum.CameraType.Custom;v193.CameraSubject=v195;end);end v8:CreateToggle({Name="Spectate ShadowMan",CurrentValue=false,Flag="Chefin_SpectateShadowMan",Callback=function(v180) local v181=0;while true do if (v181==0) then v48=v180==true ;if v48 then pcall(function() v56();end);else pcall(function() v55();end);end break;end end end});v7:CreateToggle({Name="ShadowMan ESP",CurrentValue=false,Flag="Chefin_ShadowManESP",Callback=function(v182) local v183=1469 -(1269 + 200) ;while true do if (v183==(0 -0)) then v12=v182;if v12 then local v302=0;while true do if ((815 -(98 + 717))==v302) then v21();v22();break;end end else v17();end break;end end end});v7:CreateToggle({Name="Jogadores ESP",CurrentValue=false,Flag="Chefin_PlayersESP",Callback=function(v184) local v185=826 -(802 + 24) ;while true do if (v185==0) then v23=v184;if v23 then v33();for v334,v335 in ipairs(v0:GetPlayers()) do if (v335~=v2) then v32(v335);end end else v28();end break;end end end});v7:CreateToggle({Name="Itens ESP",CurrentValue=false,Flag="Chefin_ItemsESP",Callback=function(v186) local v187=0 -0 ;while true do if (v187==0) then v34=v186;if v34 then v43();else v39();end break;end end end});v7:CreateButton({Name="Fechar UI",Callback=do local v190=0 -0 ;local v191;while true do if (v190==(0 -0)) then v191=0 + 0 ;while true do if (v191==(1551 -(1126 + 425))) then for v349,v350 in pairs(v14) do v4(v350);end v14={};v191=406 -(118 + 287) ;end if (v191==(3 -2)) then for v351,v352 in pairs(v15) do v4(v352);end v15={};v191=1123 -(118 + 1003) ;end if (v191==(6 -4)) then v16();break;end end break;end end end});
--- ⚠️ WARNING: integrity protected!
 --[[
  .____                  ________ ___.    _____                           __                
  |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
@@ -10,3 +8,1200 @@ local v0=game:GetService("Players");local v1=game:GetService("RunService");local
           \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
 
 ]]--
+
+local Players = game:GetService("Players");
+local RunService = game:GetService("RunService");
+local LocalPlayer = Players.LocalPlayer;
+local function GetHRP(char)
+	local FlatIdent_378D0 = 0;
+	while true do
+		if (FlatIdent_378D0 == 0) then
+			if char then
+				return char:FindFirstChild("HumanoidRootPart");
+			end
+			return nil;
+		end
+	end
+end
+local function SafeDestroy(obj)
+	pcall(function()
+		if (obj and obj.Parent) then
+			obj:Destroy();
+		end
+	end);
+end
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))();
+local Window = Rayfield:CreateWindow({Name="After 3 AM | by Chefin",LoadingTitle="After 3 AM",LoadingSubtitle="by Chefin",ConfigurationSaving={Enabled=true,FolderName="Chefin_After3AM",FileName="ESP_Config"},Discord={Enabled=false,Invite="",RememberJoins=true},KeySystem=false});
+local TabESP = Window:CreateTab("ESP", 4483362458);
+local TabOP = Window:CreateTab("OP", 4483362458);
+local BILLBOARD_SIZE = UDim2.new(0, 140, 0, 36);
+local BILLBOARD_TEXTSIZE = 12;
+local BILLBOARD_OFFSET = Vector3.new(0, 2.8, 0);
+local ShadowESPEnabled = false;
+local ShadowConnections = {};
+local ShadowHighlights = {};
+local ShadowBillboards = {};
+local function Shadow_DisconnectAll()
+	local FlatIdent_2953F = 0;
+	while true do
+		if (FlatIdent_2953F == 0) then
+			for _, c in ipairs(ShadowConnections) do
+				pcall(function()
+					c:Disconnect();
+				end);
+			end
+			ShadowConnections = {};
+			break;
+		end
+	end
+end
+local function Shadow_Clear()
+	local FlatIdent_2FBEB = 0;
+	while true do
+		if (FlatIdent_2FBEB == 2) then
+			Shadow_DisconnectAll();
+			break;
+		end
+		if (FlatIdent_2FBEB == 0) then
+			for monster, hl in pairs(ShadowHighlights) do
+				SafeDestroy(hl);
+			end
+			ShadowHighlights = {};
+			FlatIdent_2FBEB = 1;
+		end
+		if (FlatIdent_2FBEB == 1) then
+			for monster, bb in pairs(ShadowBillboards) do
+				SafeDestroy(bb);
+			end
+			ShadowBillboards = {};
+			FlatIdent_2FBEB = 2;
+		end
+	end
+end
+local function Shadow_CreateHighlight(monster)
+	local FlatIdent_75331 = 0;
+	local hl;
+	while true do
+		if (FlatIdent_75331 == 1) then
+			hl.Name = "Chefin_ShadowMan_Highlight";
+			hl.Adornee = monster;
+			hl.FillTransparency = 0.25;
+			FlatIdent_75331 = 2;
+		end
+		if (FlatIdent_75331 == 2) then
+			hl.OutlineTransparency = 1;
+			hl.FillColor = Color3.fromRGB(255, 0, 0);
+			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+			FlatIdent_75331 = 3;
+		end
+		if (0 == FlatIdent_75331) then
+			if (not monster or not monster.Parent) then
+				return;
+			end
+			if ShadowHighlights[monster] then
+				return;
+			end
+			hl = Instance.new("Highlight");
+			FlatIdent_75331 = 1;
+		end
+		if (FlatIdent_75331 == 3) then
+			hl.Parent = monster;
+			ShadowHighlights[monster] = hl;
+			break;
+		end
+	end
+end
+local function Shadow_CreateBillboard(monster)
+	if (not monster or not monster.Parent) then
+		return;
+	end
+	if ShadowBillboards[monster] then
+		return;
+	end
+	local attachPart = monster:FindFirstChild("HumanoidRootPart") or monster:FindFirstChild("Head") or monster:FindFirstChildWhichIsA("BasePart");
+	if not attachPart then
+		return;
+	end
+	local bb = Instance.new("BillboardGui");
+	bb.Name = "Chefin_ShadowMan_Billboard";
+	bb.Adornee = attachPart;
+	bb.AlwaysOnTop = true;
+	bb.Size = BILLBOARD_SIZE;
+	bb.StudsOffset = BILLBOARD_OFFSET;
+	bb.MaxDistance = 999999;
+	local txt = Instance.new("TextLabel");
+	txt.Name = "Label";
+	txt.BackgroundTransparency = 1;
+	txt.Size = UDim2.new(1, 0, 1, 0);
+	txt.TextScaled = false;
+	txt.TextSize = BILLBOARD_TEXTSIZE;
+	txt.Font = Enum.Font.GothamBold;
+	txt.TextColor3 = Color3.fromRGB(255, 0, 0);
+	txt.TextStrokeTransparency = 0;
+	txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+	txt.TextWrapped = true;
+	txt.TextYAlignment = Enum.TextYAlignment.Top;
+	txt.TextXAlignment = Enum.TextXAlignment.Center;
+	txt.Text = "ShadowMan\nDistância: ?m\nSaúde: ?";
+	txt.Parent = bb;
+	bb.Parent = monster;
+	ShadowBillboards[monster] = bb;
+end
+local function Shadow_StartUpdater(monster)
+	local FlatIdent_23BE8 = 0;
+	local bb;
+	local label;
+	local conn;
+	while true do
+		if (FlatIdent_23BE8 == 0) then
+			bb = ShadowBillboards[monster];
+			if not bb then
+				return;
+			end
+			FlatIdent_23BE8 = 1;
+		end
+		if (1 == FlatIdent_23BE8) then
+			label = bb:FindFirstChild("Label");
+			if not label then
+				return;
+			end
+			FlatIdent_23BE8 = 2;
+		end
+		if (FlatIdent_23BE8 == 2) then
+			conn = nil;
+			conn = RunService.RenderStepped:Connect(function()
+				local FlatIdent_781F8 = 0;
+				local myHRP;
+				local attachPart;
+				local humanoid;
+				local distText;
+				local hpText;
+				while true do
+					if (1 == FlatIdent_781F8) then
+						myHRP = GetHRP(LocalPlayer.Character);
+						attachPart = monster:FindFirstChild("HumanoidRootPart") or monster:FindFirstChild("Head") or monster:FindFirstChildWhichIsA("BasePart");
+						FlatIdent_781F8 = 2;
+					end
+					if (FlatIdent_781F8 == 3) then
+						if (myHRP and attachPart) then
+							local FlatIdent_78A9D = 0;
+							local dist;
+							while true do
+								if (FlatIdent_78A9D == 0) then
+									dist = (myHRP.Position - attachPart.Position).Magnitude;
+									distText = ("Distância: %.0fm"):format(dist);
+									break;
+								end
+							end
+						end
+						hpText = "Saúde: ?";
+						FlatIdent_781F8 = 4;
+					end
+					if (2 == FlatIdent_781F8) then
+						humanoid = monster:FindFirstChildOfClass("Humanoid");
+						distText = "Distância: ?m";
+						FlatIdent_781F8 = 3;
+					end
+					if (FlatIdent_781F8 == 0) then
+						if not ShadowESPEnabled then
+							local FlatIdent_27957 = 0;
+							while true do
+								if (0 == FlatIdent_27957) then
+									if conn then
+										conn:Disconnect();
+									end
+									return;
+								end
+							end
+						end
+						if (not monster or not monster.Parent) then
+							local FlatIdent_77C29 = 0;
+							while true do
+								if (FlatIdent_77C29 == 0) then
+									if conn then
+										conn:Disconnect();
+									end
+									return;
+								end
+							end
+						end
+						FlatIdent_781F8 = 1;
+					end
+					if (FlatIdent_781F8 == 4) then
+						if humanoid then
+							hpText = ("Saúde: %.0f"):format(humanoid.Health);
+						end
+						label.Text = "ShadowMan\n" .. distText .. "\n" .. hpText;
+						break;
+					end
+				end
+			end);
+			FlatIdent_23BE8 = 3;
+		end
+		if (3 == FlatIdent_23BE8) then
+			table.insert(ShadowConnections, conn);
+			break;
+		end
+	end
+end
+local function Shadow_Apply()
+	local FlatIdent_703C8 = 0;
+	local monstersFolder;
+	local shadow;
+	while true do
+		if (FlatIdent_703C8 == 2) then
+			if not shadow then
+				return;
+			end
+			Shadow_CreateHighlight(shadow);
+			FlatIdent_703C8 = 3;
+		end
+		if (FlatIdent_703C8 == 0) then
+			if not ShadowESPEnabled then
+				return;
+			end
+			monstersFolder = workspace:FindFirstChild("CurrentMonsters");
+			FlatIdent_703C8 = 1;
+		end
+		if (FlatIdent_703C8 == 1) then
+			if not monstersFolder then
+				return;
+			end
+			shadow = monstersFolder:FindFirstChild("ShadowMan");
+			FlatIdent_703C8 = 2;
+		end
+		if (FlatIdent_703C8 == 3) then
+			Shadow_CreateBillboard(shadow);
+			Shadow_StartUpdater(shadow);
+			break;
+		end
+	end
+end
+local function Shadow_StartWatcher()
+	local FlatIdent_1B1BA = 0;
+	local monstersFolder;
+	local conn1;
+	while true do
+		if (FlatIdent_1B1BA == 0) then
+			monstersFolder = workspace:FindFirstChild("CurrentMonsters");
+			if not monstersFolder then
+				return;
+			end
+			FlatIdent_1B1BA = 1;
+		end
+		if (FlatIdent_1B1BA == 1) then
+			conn1 = monstersFolder.ChildAdded:Connect(function(child)
+				if not ShadowESPEnabled then
+					return;
+				end
+				if (child.Name == "ShadowMan") then
+					local FlatIdent_8DCA9 = 0;
+					while true do
+						if (FlatIdent_8DCA9 == 0) then
+							task.wait(0.15);
+							Shadow_Apply();
+							break;
+						end
+					end
+				end
+			end);
+			table.insert(ShadowConnections, conn1);
+			break;
+		end
+	end
+end
+local PlayersESPEnabled = false;
+local PlayerConnections = {};
+local PlayerHighlights = {};
+local PlayerBillboards = {};
+local function Player_DisconnectAll()
+	local FlatIdent_39EBF = 0;
+	while true do
+		if (FlatIdent_39EBF == 0) then
+			for _, c in ipairs(PlayerConnections) do
+				pcall(function()
+					c:Disconnect();
+				end);
+			end
+			PlayerConnections = {};
+			break;
+		end
+	end
+end
+local function Player_Clear()
+	local FlatIdent_8BF78 = 0;
+	while true do
+		if (FlatIdent_8BF78 == 2) then
+			Player_DisconnectAll();
+			break;
+		end
+		if (1 == FlatIdent_8BF78) then
+			PlayerHighlights = {};
+			PlayerBillboards = {};
+			FlatIdent_8BF78 = 2;
+		end
+		if (FlatIdent_8BF78 == 0) then
+			for _, hl in pairs(PlayerHighlights) do
+				SafeDestroy(hl);
+			end
+			for _, bb in pairs(PlayerBillboards) do
+				SafeDestroy(bb);
+			end
+			FlatIdent_8BF78 = 1;
+		end
+	end
+end
+local function Player_CreateHighlight(char)
+	local FlatIdent_2B986 = 0;
+	local hl;
+	while true do
+		if (FlatIdent_2B986 == 0) then
+			if (not char or not char.Parent) then
+				return;
+			end
+			if PlayerHighlights[char] then
+				return;
+			end
+			hl = Instance.new("Highlight");
+			hl.Name = "Chefin_Player_Highlight";
+			FlatIdent_2B986 = 1;
+		end
+		if (FlatIdent_2B986 == 2) then
+			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+			hl.Parent = char;
+			PlayerHighlights[char] = hl;
+			break;
+		end
+		if (FlatIdent_2B986 == 1) then
+			hl.Adornee = char;
+			hl.FillTransparency = 0.25;
+			hl.OutlineTransparency = 1;
+			hl.FillColor = Color3.fromRGB(0, 255, 255);
+			FlatIdent_2B986 = 2;
+		end
+	end
+end
+local function Player_CreateBillboard(char, plrName)
+	local FlatIdent_189F0 = 0;
+	local attachPart;
+	local bb;
+	local txt;
+	while true do
+		if (4 == FlatIdent_189F0) then
+			txt.TextSize = BILLBOARD_TEXTSIZE;
+			txt.Font = Enum.Font.GothamBold;
+			txt.TextColor3 = Color3.fromRGB(0, 255, 255);
+			txt.TextStrokeTransparency = 0;
+			FlatIdent_189F0 = 5;
+		end
+		if (FlatIdent_189F0 == 1) then
+			bb = Instance.new("BillboardGui");
+			bb.Name = "Chefin_Player_Billboard";
+			bb.Adornee = attachPart;
+			bb.AlwaysOnTop = true;
+			FlatIdent_189F0 = 2;
+		end
+		if (3 == FlatIdent_189F0) then
+			txt.Name = "Label";
+			txt.BackgroundTransparency = 1;
+			txt.Size = UDim2.new(1, 0, 1, 0);
+			txt.TextScaled = false;
+			FlatIdent_189F0 = 4;
+		end
+		if (FlatIdent_189F0 == 2) then
+			bb.Size = BILLBOARD_SIZE;
+			bb.StudsOffset = BILLBOARD_OFFSET;
+			bb.MaxDistance = 999999;
+			txt = Instance.new("TextLabel");
+			FlatIdent_189F0 = 3;
+		end
+		if (FlatIdent_189F0 == 5) then
+			txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+			txt.TextWrapped = true;
+			txt.TextYAlignment = Enum.TextYAlignment.Top;
+			txt.TextXAlignment = Enum.TextXAlignment.Center;
+			FlatIdent_189F0 = 6;
+		end
+		if (FlatIdent_189F0 == 6) then
+			txt.Text = plrName .. "\nDistância: ?m";
+			txt.Parent = bb;
+			bb.Parent = char;
+			PlayerBillboards[char] = bb;
+			break;
+		end
+		if (FlatIdent_189F0 == 0) then
+			if (not char or not char.Parent) then
+				return;
+			end
+			if PlayerBillboards[char] then
+				return;
+			end
+			attachPart = char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Head") or char:FindFirstChildWhichIsA("BasePart");
+			if not attachPart then
+				return;
+			end
+			FlatIdent_189F0 = 1;
+		end
+	end
+end
+local function Player_StartUpdater(char, plrName)
+	local FlatIdent_5477B = 0;
+	local bb;
+	local label;
+	local conn;
+	while true do
+		if (1 == FlatIdent_5477B) then
+			label = bb:FindFirstChild("Label");
+			if not label then
+				return;
+			end
+			FlatIdent_5477B = 2;
+		end
+		if (FlatIdent_5477B == 3) then
+			table.insert(PlayerConnections, conn);
+			break;
+		end
+		if (FlatIdent_5477B == 0) then
+			bb = PlayerBillboards[char];
+			if not bb then
+				return;
+			end
+			FlatIdent_5477B = 1;
+		end
+		if (FlatIdent_5477B == 2) then
+			conn = nil;
+			conn = RunService.RenderStepped:Connect(function()
+				local FlatIdent_2388 = 0;
+				local myHRP;
+				local theirHRP;
+				local distText;
+				while true do
+					if (FlatIdent_2388 == 3) then
+						label.Text = plrName .. "\n" .. distText;
+						break;
+					end
+					if (FlatIdent_2388 == 2) then
+						distText = "Distância: ?m";
+						if (myHRP and theirHRP) then
+							local FlatIdent_90A41 = 0;
+							local dist;
+							while true do
+								if (FlatIdent_90A41 == 0) then
+									dist = (myHRP.Position - theirHRP.Position).Magnitude;
+									distText = ("Distância: %.0fm"):format(dist);
+									break;
+								end
+							end
+						end
+						FlatIdent_2388 = 3;
+					end
+					if (1 == FlatIdent_2388) then
+						myHRP = GetHRP(LocalPlayer.Character);
+						theirHRP = GetHRP(char);
+						FlatIdent_2388 = 2;
+					end
+					if (FlatIdent_2388 == 0) then
+						if not PlayersESPEnabled then
+							local FlatIdent_61800 = 0;
+							while true do
+								if (FlatIdent_61800 == 0) then
+									if conn then
+										conn:Disconnect();
+									end
+									return;
+								end
+							end
+						end
+						if (not char or not char.Parent) then
+							local FlatIdent_89C1C = 0;
+							while true do
+								if (FlatIdent_89C1C == 0) then
+									if conn then
+										conn:Disconnect();
+									end
+									return;
+								end
+							end
+						end
+						FlatIdent_2388 = 1;
+					end
+				end
+			end);
+			FlatIdent_5477B = 3;
+		end
+	end
+end
+local function Player_ApplyToPlayer(plr)
+	local FlatIdent_6D9D2 = 0;
+	local char;
+	while true do
+		if (FlatIdent_6D9D2 == 3) then
+			Player_StartUpdater(char, plr.Name);
+			break;
+		end
+		if (FlatIdent_6D9D2 == 2) then
+			Player_CreateHighlight(char);
+			Player_CreateBillboard(char, plr.Name);
+			FlatIdent_6D9D2 = 3;
+		end
+		if (FlatIdent_6D9D2 == 0) then
+			if not PlayersESPEnabled then
+				return;
+			end
+			if (plr == LocalPlayer) then
+				return;
+			end
+			FlatIdent_6D9D2 = 1;
+		end
+		if (FlatIdent_6D9D2 == 1) then
+			char = plr.Character;
+			if not char then
+				return;
+			end
+			FlatIdent_6D9D2 = 2;
+		end
+	end
+end
+local function Player_StartWatcher()
+	local FlatIdent_1FC27 = 0;
+	local conn1;
+	local conn2;
+	while true do
+		if (FlatIdent_1FC27 == 1) then
+			table.insert(PlayerConnections, conn1);
+			table.insert(PlayerConnections, conn2);
+			FlatIdent_1FC27 = 2;
+		end
+		if (FlatIdent_1FC27 == 2) then
+			for _, plr in ipairs(Players:GetPlayers()) do
+				if (plr ~= LocalPlayer) then
+					local FlatIdent_2E34E = 0;
+					local connChar;
+					while true do
+						if (FlatIdent_2E34E == 0) then
+							if plr.Character then
+								Player_ApplyToPlayer(plr);
+							end
+							connChar = plr.CharacterAdded:Connect(function()
+								local FlatIdent_4223E = 0;
+								while true do
+									if (FlatIdent_4223E == 0) then
+										task.wait(0.2);
+										Player_ApplyToPlayer(plr);
+										break;
+									end
+								end
+							end);
+							FlatIdent_2E34E = 1;
+						end
+						if (FlatIdent_2E34E == 1) then
+							table.insert(PlayerConnections, connChar);
+							break;
+						end
+					end
+				end
+			end
+			break;
+		end
+		if (FlatIdent_1FC27 == 0) then
+			conn1 = Players.PlayerAdded:Connect(function(plr)
+				local FlatIdent_4E1DE = 0;
+				local connChar;
+				while true do
+					if (0 == FlatIdent_4E1DE) then
+						if not PlayersESPEnabled then
+							return;
+						end
+						connChar = nil;
+						FlatIdent_4E1DE = 1;
+					end
+					if (FlatIdent_4E1DE == 1) then
+						connChar = plr.CharacterAdded:Connect(function()
+							local FlatIdent_272FB = 0;
+							while true do
+								if (FlatIdent_272FB == 0) then
+									task.wait(0.2);
+									Player_ApplyToPlayer(plr);
+									break;
+								end
+							end
+						end);
+						table.insert(PlayerConnections, connChar);
+						break;
+					end
+				end
+			end);
+			conn2 = Players.PlayerRemoving:Connect(function(plr)
+				if plr.Character then
+					local FlatIdent_8ABD6 = 0;
+					while true do
+						if (FlatIdent_8ABD6 == 0) then
+							SafeDestroy(PlayerHighlights[plr.Character]);
+							SafeDestroy(PlayerBillboards[plr.Character]);
+							FlatIdent_8ABD6 = 1;
+						end
+						if (FlatIdent_8ABD6 == 1) then
+							PlayerHighlights[plr.Character] = nil;
+							PlayerBillboards[plr.Character] = nil;
+							break;
+						end
+					end
+				end
+			end);
+			FlatIdent_1FC27 = 1;
+		end
+	end
+end
+local ItemsESPEnabled = false;
+local ItemsConnections = {};
+local ItemsHighlights = {};
+local ItemsBillboards = {};
+local function Items_DisconnectAll()
+	local FlatIdent_6AEED = 0;
+	while true do
+		if (FlatIdent_6AEED == 0) then
+			for _, c in ipairs(ItemsConnections) do
+				pcall(function()
+					c:Disconnect();
+				end);
+			end
+			ItemsConnections = {};
+			break;
+		end
+	end
+end
+local function Items_Clear()
+	local FlatIdent_8DAB1 = 0;
+	while true do
+		if (FlatIdent_8DAB1 == 0) then
+			for item, hl in pairs(ItemsHighlights) do
+				SafeDestroy(hl);
+			end
+			for item, bb in pairs(ItemsBillboards) do
+				SafeDestroy(bb);
+			end
+			FlatIdent_8DAB1 = 1;
+		end
+		if (FlatIdent_8DAB1 == 2) then
+			Items_DisconnectAll();
+			break;
+		end
+		if (FlatIdent_8DAB1 == 1) then
+			ItemsHighlights = {};
+			ItemsBillboards = {};
+			FlatIdent_8DAB1 = 2;
+		end
+	end
+end
+local function Items_CreateHighlight(item)
+	local FlatIdent_5E109 = 0;
+	local hl;
+	while true do
+		if (1 == FlatIdent_5E109) then
+			hl.Adornee = item;
+			hl.FillTransparency = 0.25;
+			hl.OutlineTransparency = 1;
+			hl.FillColor = Color3.fromRGB(0, 255, 0);
+			FlatIdent_5E109 = 2;
+		end
+		if (FlatIdent_5E109 == 2) then
+			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
+			hl.Parent = item;
+			ItemsHighlights[item] = hl;
+			break;
+		end
+		if (FlatIdent_5E109 == 0) then
+			if (not item or not item.Parent) then
+				return;
+			end
+			if ItemsHighlights[item] then
+				return;
+			end
+			hl = Instance.new("Highlight");
+			hl.Name = "Chefin_Item_Highlight";
+			FlatIdent_5E109 = 1;
+		end
+	end
+end
+local function Items_CreateBillboard(item)
+	local FlatIdent_6B92D = 0;
+	local attachPart;
+	local bb;
+	local txt;
+	while true do
+		if (FlatIdent_6B92D == 6) then
+			txt.TextColor3 = Color3.fromRGB(0, 255, 0);
+			txt.TextStrokeTransparency = 0;
+			txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
+			FlatIdent_6B92D = 7;
+		end
+		if (FlatIdent_6B92D == 8) then
+			txt.Text = item.Name;
+			txt.Parent = bb;
+			bb.Parent = item;
+			FlatIdent_6B92D = 9;
+		end
+		if (FlatIdent_6B92D == 1) then
+			if not attachPart then
+				return;
+			end
+			bb = Instance.new("BillboardGui");
+			bb.Name = "Chefin_Item_Billboard";
+			FlatIdent_6B92D = 2;
+		end
+		if (3 == FlatIdent_6B92D) then
+			bb.StudsOffset = Vector3.new(0, 1.8, 0);
+			bb.MaxDistance = 999999;
+			txt = Instance.new("TextLabel");
+			FlatIdent_6B92D = 4;
+		end
+		if (FlatIdent_6B92D == 0) then
+			if (not item or not item.Parent) then
+				return;
+			end
+			if ItemsBillboards[item] then
+				return;
+			end
+			attachPart = item:FindFirstChild("Handle") or item:FindFirstChild("HumanoidRootPart") or item:FindFirstChildWhichIsA("BasePart");
+			FlatIdent_6B92D = 1;
+		end
+		if (9 == FlatIdent_6B92D) then
+			ItemsBillboards[item] = bb;
+			break;
+		end
+		if (FlatIdent_6B92D == 2) then
+			bb.Adornee = attachPart;
+			bb.AlwaysOnTop = true;
+			bb.Size = UDim2.new(0, 140, 0, 24);
+			FlatIdent_6B92D = 3;
+		end
+		if (4 == FlatIdent_6B92D) then
+			txt.Name = "Label";
+			txt.BackgroundTransparency = 1;
+			txt.Size = UDim2.new(1, 0, 1, 0);
+			FlatIdent_6B92D = 5;
+		end
+		if (FlatIdent_6B92D == 5) then
+			txt.TextScaled = false;
+			txt.TextSize = 12;
+			txt.Font = Enum.Font.GothamBold;
+			FlatIdent_6B92D = 6;
+		end
+		if (FlatIdent_6B92D == 7) then
+			txt.TextWrapped = true;
+			txt.TextYAlignment = Enum.TextYAlignment.Center;
+			txt.TextXAlignment = Enum.TextXAlignment.Center;
+			FlatIdent_6B92D = 8;
+		end
+	end
+end
+local function Items_ApplyToItem(item)
+	local FlatIdent_912A7 = 0;
+	while true do
+		if (FlatIdent_912A7 == 0) then
+			if not ItemsESPEnabled then
+				return;
+			end
+			if (not item or not item.Parent) then
+				return;
+			end
+			FlatIdent_912A7 = 1;
+		end
+		if (FlatIdent_912A7 == 1) then
+			Items_CreateHighlight(item);
+			Items_CreateBillboard(item);
+			break;
+		end
+	end
+end
+local function Items_StartWatcher()
+	local FlatIdent_44652 = 0;
+	local folder;
+	local conn1;
+	local conn2;
+	while true do
+		if (FlatIdent_44652 == 1) then
+			for _, obj in ipairs(folder:GetChildren()) do
+				Items_ApplyToItem(obj);
+			end
+			conn1 = folder.ChildAdded:Connect(function(child)
+				local FlatIdent_5724B = 0;
+				while true do
+					if (FlatIdent_5724B == 1) then
+						Items_ApplyToItem(child);
+						break;
+					end
+					if (0 == FlatIdent_5724B) then
+						if not ItemsESPEnabled then
+							return;
+						end
+						task.wait(0.05);
+						FlatIdent_5724B = 1;
+					end
+				end
+			end);
+			FlatIdent_44652 = 2;
+		end
+		if (3 == FlatIdent_44652) then
+			table.insert(ItemsConnections, conn2);
+			break;
+		end
+		if (FlatIdent_44652 == 2) then
+			conn2 = folder.ChildRemoved:Connect(function(child)
+				local FlatIdent_83844 = 0;
+				while true do
+					if (FlatIdent_83844 == 0) then
+						SafeDestroy(ItemsHighlights[child]);
+						SafeDestroy(ItemsBillboards[child]);
+						FlatIdent_83844 = 1;
+					end
+					if (1 == FlatIdent_83844) then
+						ItemsHighlights[child] = nil;
+						ItemsBillboards[child] = nil;
+						break;
+					end
+				end
+			end);
+			table.insert(ItemsConnections, conn1);
+			FlatIdent_44652 = 3;
+		end
+		if (FlatIdent_44652 == 0) then
+			folder = workspace:FindFirstChild("Pickups");
+			if not folder then
+				return;
+			end
+			FlatIdent_44652 = 1;
+		end
+	end
+end
+TabOP:CreateButton({Name="Set Shotgun Ammo",Callback=function()
+	local FlatIdent_2593F = 0;
+	local args;
+	while true do
+		if (FlatIdent_2593F == 0) then
+			args = {"Shotgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Shotgun"),1000000};
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(args));
+			break;
+		end
+	end
+end});
+TabOP:CreateButton({Name="Set Handgun Ammo",Callback=function()
+	local FlatIdent_3B08E = 0;
+	local args;
+	while true do
+		if (FlatIdent_3B08E == 0) then
+			args = {"Handgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Handgun"),1000000};
+			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(args));
+			break;
+		end
+	end
+end});
+local KillShadowManEnabled = false;
+local KillMode = "Shotgun";
+local function GetShadowHead()
+	local FlatIdent_94AF7 = 0;
+	local folder;
+	local shadow;
+	while true do
+		if (FlatIdent_94AF7 == 0) then
+			folder = workspace:FindFirstChild("CurrentMonsters");
+			if not folder then
+				return nil;
+			end
+			FlatIdent_94AF7 = 1;
+		end
+		if (FlatIdent_94AF7 == 1) then
+			shadow = folder:FindFirstChild("ShadowMan");
+			if not shadow then
+				return nil;
+			end
+			FlatIdent_94AF7 = 2;
+		end
+		if (2 == FlatIdent_94AF7) then
+			return shadow:FindFirstChild("Head");
+		end
+	end
+end
+local function FireDamageEvent(toolName)
+	local FlatIdent_3B868 = 0;
+	local head;
+	local tool;
+	local backpack;
+	local remote;
+	local args;
+	while true do
+		if (FlatIdent_3B868 == 3) then
+			args = {head,Vector3.new(56.75334167480469, 45.881412506103516, -343.3638916015625)};
+			pcall(function()
+				remote:FireServer(unpack(args));
+			end);
+			break;
+		end
+		if (FlatIdent_3B868 == 1) then
+			backpack = LocalPlayer:FindFirstChild("Backpack");
+			if backpack then
+				tool = backpack:FindFirstChild(toolName);
+			end
+			if not tool then
+				local FlatIdent_7695C = 0;
+				local char;
+				while true do
+					if (FlatIdent_7695C == 0) then
+						char = LocalPlayer.Character;
+						if char then
+							tool = char:FindFirstChild(toolName);
+						end
+						break;
+					end
+				end
+			end
+			FlatIdent_3B868 = 2;
+		end
+		if (2 == FlatIdent_3B868) then
+			if not tool then
+				return;
+			end
+			remote = tool:FindFirstChild("DamageTargetEvent");
+			if not remote then
+				return;
+			end
+			FlatIdent_3B868 = 3;
+		end
+		if (FlatIdent_3B868 == 0) then
+			head = GetShadowHead();
+			if not head then
+				return;
+			end
+			tool = nil;
+			FlatIdent_3B868 = 1;
+		end
+	end
+end
+task.spawn(function()
+	while task.wait(0.15) do
+		if KillShadowManEnabled then
+			if (KillMode == "Shotgun") then
+				FireDamageEvent("Shotgun");
+			else
+				FireDamageEvent("Handgun");
+			end
+		end
+	end
+end);
+TabOP:CreateDropdown({Name="Kill Mode",Options={"Shotgun","Handgun"},CurrentOption={"Shotgun"},Flag="Chefin_KillMode",Callback=function(Option)
+	if (typeof(Option) == "table") then
+		KillMode = Option[1];
+	else
+		KillMode = tostring(Option);
+	end
+end});
+TabOP:CreateToggle({Name="KillShadowMan",CurrentValue=false,Flag="Chefin_KillShadowMan",Callback=function(Value)
+	KillShadowManEnabled = Value;
+end});
+local Players = game:GetService("Players");
+local RunService = game:GetService("RunService");
+local LocalPlayer = Players.LocalPlayer;
+local SpectateShadow = false;
+local DefaultSubject = nil;
+local DefaultCamType = nil;
+local CamConn = nil;
+local function GetShadowMan()
+	local FlatIdent_5A134 = 0;
+	local monsters;
+	while true do
+		if (FlatIdent_5A134 == 0) then
+			monsters = workspace:FindFirstChild("CurrentMonsters");
+			if not monsters then
+				return nil;
+			end
+			FlatIdent_5A134 = 1;
+		end
+		if (FlatIdent_5A134 == 1) then
+			return monsters:FindFirstChild("ShadowMan");
+		end
+	end
+end
+local function SaveCamera()
+	local cam = workspace.CurrentCamera;
+	if not cam then
+		return;
+	end
+	DefaultSubject = cam.CameraSubject;
+	DefaultCamType = cam.CameraType;
+end
+local function ResetCamera()
+	local cam = workspace.CurrentCamera;
+	if not cam then
+		return;
+	end
+	if DefaultSubject then
+		local FlatIdent_3ACCC = 0;
+		while true do
+			if (FlatIdent_3ACCC == 1) then
+				return;
+			end
+			if (FlatIdent_3ACCC == 0) then
+				cam.CameraType = DefaultCamType or Enum.CameraType.Custom;
+				cam.CameraSubject = DefaultSubject;
+				FlatIdent_3ACCC = 1;
+			end
+		end
+	end
+	local char = LocalPlayer.Character;
+	if char then
+		local FlatIdent_835BC = 0;
+		local hum;
+		while true do
+			if (0 == FlatIdent_835BC) then
+				hum = char:FindFirstChildOfClass("Humanoid");
+				if hum then
+					local FlatIdent_145D2 = 0;
+					while true do
+						if (FlatIdent_145D2 == 0) then
+							cam.CameraType = Enum.CameraType.Custom;
+							cam.CameraSubject = hum;
+							break;
+						end
+					end
+				end
+				break;
+			end
+		end
+	end
+end
+local function StopSpectate()
+	local FlatIdent_6D884 = 0;
+	while true do
+		if (0 == FlatIdent_6D884) then
+			if CamConn then
+				local FlatIdent_5AA23 = 0;
+				while true do
+					if (FlatIdent_5AA23 == 0) then
+						CamConn:Disconnect();
+						CamConn = nil;
+						break;
+					end
+				end
+			end
+			ResetCamera();
+			break;
+		end
+	end
+end
+local function StartSpectate()
+	local cam = workspace.CurrentCamera;
+	if not cam then
+		return;
+	end
+	SaveCamera();
+	if CamConn then
+		local FlatIdent_3F15E = 0;
+		while true do
+			if (FlatIdent_3F15E == 0) then
+				CamConn:Disconnect();
+				CamConn = nil;
+				break;
+			end
+		end
+	end
+	CamConn = RunService.RenderStepped:Connect(function()
+		if not SpectateShadow then
+			return;
+		end
+		local camNow = workspace.CurrentCamera;
+		if not camNow then
+			return;
+		end
+		local shadow = GetShadowMan();
+		if not shadow then
+			local FlatIdent_229D1 = 0;
+			while true do
+				if (FlatIdent_229D1 == 0) then
+					ResetCamera();
+					return;
+				end
+			end
+		end
+		local head = shadow:FindFirstChild("Head");
+		if not head then
+			local FlatIdent_71E8F = 0;
+			while true do
+				if (FlatIdent_71E8F == 0) then
+					ResetCamera();
+					return;
+				end
+			end
+		end
+		camNow.CameraType = Enum.CameraType.Custom;
+		camNow.CameraSubject = head;
+	end);
+end
+TabOP:CreateToggle({Name="Spectate ShadowMan",CurrentValue=false,Flag="Chefin_SpectateShadowMan",Callback=function(Value)
+	local FlatIdent_51C44 = 0;
+	while true do
+		if (FlatIdent_51C44 == 0) then
+			SpectateShadow = Value == true;
+			if SpectateShadow then
+				pcall(function()
+					StartSpectate();
+				end);
+			else
+				pcall(function()
+					StopSpectate();
+				end);
+			end
+			break;
+		end
+	end
+end});
+TabESP:CreateToggle({Name="ShadowMan ESP",CurrentValue=false,Flag="Chefin_ShadowManESP",Callback=function(Value)
+	local FlatIdent_5E642 = 0;
+	while true do
+		if (FlatIdent_5E642 == 0) then
+			ShadowESPEnabled = Value;
+			if ShadowESPEnabled then
+				Shadow_Apply();
+				Shadow_StartWatcher();
+			else
+				Shadow_Clear();
+			end
+			break;
+		end
+	end
+end});
+TabESP:CreateToggle({Name="Jogadores ESP",CurrentValue=false,Flag="Chefin_PlayersESP",Callback=function(Value)
+	PlayersESPEnabled = Value;
+	if PlayersESPEnabled then
+		local FlatIdent_92514 = 0;
+		while true do
+			if (FlatIdent_92514 == 0) then
+				Player_StartWatcher();
+				for _, plr in ipairs(Players:GetPlayers()) do
+					if (plr ~= LocalPlayer) then
+						Player_ApplyToPlayer(plr);
+					end
+				end
+				break;
+			end
+		end
+	else
+		Player_Clear();
+	end
+end});
+TabESP:CreateToggle({Name="Itens ESP",CurrentValue=false,Flag="Chefin_ItemsESP",Callback=function(Value)
+	local FlatIdent_13B77 = 0;
+	while true do
+		if (0 == FlatIdent_13B77) then
+			ItemsESPEnabled = Value;
+			if ItemsESPEnabled then
+				Items_StartWatcher();
+			else
+				Items_Clear();
+			end
+			break;
+		end
+	end
+end});
+TabESP:CreateButton({Name="Fechar UI",Callback=function()
+	Rayfield:Destroy();
+end});
