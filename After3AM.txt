@@ -1,1207 +1,512 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+--// Obfuscated by Claude
+local _0x1a=game;local _0x2b=workspace;local _0x3c=task;local _0x4d=table;local _0x5e=string;local _0x6f=pcall;local _0x7g=ipairs;local _0x8h=pairs;local _0x9i=tostring;local _0xaj=typeof;local _0xbk=unpack;
 
-]]--
+local _S=function(t)local r=""for i=1,#t do r=r..string.char(t[i])end return r end
 
-local Players = game:GetService("Players");
-local RunService = game:GetService("RunService");
-local LocalPlayer = Players.LocalPlayer;
-local function GetHRP(char)
-	local FlatIdent_378D0 = 0;
-	while true do
-		if (FlatIdent_378D0 == 0) then
-			if char then
-				return char:FindFirstChild("HumanoidRootPart");
-			end
-			return nil;
-		end
-	end
+-- Services
+local _svc1=_0x1a:GetService(_S({80,108,97,121,101,114,115}))
+local _svc2=_0x1a:GetService(_S({82,117,110,83,101,114,118,105,99,101}))
+local _svc3=_0x1a:GetService(_S({82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101}))
+local _lp=_svc1.LocalPlayer
+
+local function _util1(c)
+    if c then return c:FindFirstChild(_S({72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116}))end
+    return nil
 end
-local function SafeDestroy(obj)
-	pcall(function()
-		if (obj and obj.Parent) then
-			obj:Destroy();
-		end
-	end);
+
+local function _util2(o)
+    _0x6f(function()
+        if o and o.Parent then o:Destroy()end
+    end)
 end
-local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))();
-local Window = Rayfield:CreateWindow({Name="After 3 AM | by Chefin",LoadingTitle="After 3 AM",LoadingSubtitle="by Chefin",ConfigurationSaving={Enabled=true,FolderName="Chefin_After3AM",FileName="ESP_Config"},Discord={Enabled=false,Invite="",RememberJoins=true},KeySystem=false});
-local TabESP = Window:CreateTab("ESP", 4483362458);
-local TabOP = Window:CreateTab("OP", 4483362458);
-local BILLBOARD_SIZE = UDim2.new(0, 140, 0, 36);
-local BILLBOARD_TEXTSIZE = 12;
-local BILLBOARD_OFFSET = Vector3.new(0, 2.8, 0);
-local ShadowESPEnabled = false;
-local ShadowConnections = {};
-local ShadowHighlights = {};
-local ShadowBillboards = {};
-local function Shadow_DisconnectAll()
-	local FlatIdent_2953F = 0;
-	while true do
-		if (FlatIdent_2953F == 0) then
-			for _, c in ipairs(ShadowConnections) do
-				pcall(function()
-					c:Disconnect();
-				end);
-			end
-			ShadowConnections = {};
-			break;
-		end
-	end
+
+-- Rayfield
+local _rf=loadstring(_0x1a:HttpGet(_S({104,116,116,112,115,58,47,47,115,105,114,105,117,115,46,109,101,110,117,47,114,97,121,102,105,101,108,100})))()
+
+local _win=_rf:CreateWindow({
+    Name=_S({65,102,116,101,114,32,51,32,65,77,32,124,32,98,121,32,67,104,101,102,105,110}),
+    LoadingTitle=_S({65,102,116,101,114,32,51,32,65,77}),
+    LoadingSubtitle=_S({98,121,32,67,104,101,102,105,110}),
+    ConfigurationSaving={
+        Enabled=true,
+        FolderName=_S({67,104,101,102,105,110,95,65,102,116,101,114,51,65,77}),
+        FileName=_S({69,83,80,95,67,111,110,102,105,103})
+    },
+    Discord={Enabled=false,Invite="",RememberJoins=true},
+    KeySystem=false
+})
+
+local _tab1=_win:CreateTab(_S({69,83,80}),4483362458)
+local _tab2=_win:CreateTab(_S({79,80}),4483362458)
+
+local _bsz=UDim2.new(0,140,0,36)
+local _bts=12
+local _bof=Vector3.new(0,2.8,0)
+
+-- ShadowMan ESP
+local _se=false
+local _sc={}
+local _sh={}
+local _sb={}
+
+local function _sdc()
+    for _,c in _0x7g(_sc)do _0x6f(function()c:Disconnect()end)end
+    _sc={}
 end
-local function Shadow_Clear()
-	local FlatIdent_2FBEB = 0;
-	while true do
-		if (FlatIdent_2FBEB == 2) then
-			Shadow_DisconnectAll();
-			break;
-		end
-		if (FlatIdent_2FBEB == 0) then
-			for monster, hl in pairs(ShadowHighlights) do
-				SafeDestroy(hl);
-			end
-			ShadowHighlights = {};
-			FlatIdent_2FBEB = 1;
-		end
-		if (FlatIdent_2FBEB == 1) then
-			for monster, bb in pairs(ShadowBillboards) do
-				SafeDestroy(bb);
-			end
-			ShadowBillboards = {};
-			FlatIdent_2FBEB = 2;
-		end
-	end
+
+local function _scl()
+    for _,v in _0x8h(_sh)do _util2(v)end
+    _sh={}
+    for _,v in _0x8h(_sb)do _util2(v)end
+    _sb={}
+    _sdc()
 end
-local function Shadow_CreateHighlight(monster)
-	local FlatIdent_75331 = 0;
-	local hl;
-	while true do
-		if (FlatIdent_75331 == 1) then
-			hl.Name = "Chefin_ShadowMan_Highlight";
-			hl.Adornee = monster;
-			hl.FillTransparency = 0.25;
-			FlatIdent_75331 = 2;
-		end
-		if (FlatIdent_75331 == 2) then
-			hl.OutlineTransparency = 1;
-			hl.FillColor = Color3.fromRGB(255, 0, 0);
-			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
-			FlatIdent_75331 = 3;
-		end
-		if (0 == FlatIdent_75331) then
-			if (not monster or not monster.Parent) then
-				return;
-			end
-			if ShadowHighlights[monster] then
-				return;
-			end
-			hl = Instance.new("Highlight");
-			FlatIdent_75331 = 1;
-		end
-		if (FlatIdent_75331 == 3) then
-			hl.Parent = monster;
-			ShadowHighlights[monster] = hl;
-			break;
-		end
-	end
+
+local function _sch(m)
+    if not m or not m.Parent then return end
+    if _sh[m] then return end
+    local h=Instance.new(_S({72,105,103,104,108,105,103,104,116}))
+    h.Name=_S({67,104,101,102,105,110,95,83,104,97,100,111,119,77,97,110,95,72,108})
+    h.Adornee=m
+    h.FillTransparency=0.25
+    h.OutlineTransparency=1
+    h.FillColor=Color3.fromRGB(255,0,0)
+    h.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop
+    h.Parent=m
+    _sh[m]=h
 end
-local function Shadow_CreateBillboard(monster)
-	if (not monster or not monster.Parent) then
-		return;
-	end
-	if ShadowBillboards[monster] then
-		return;
-	end
-	local attachPart = monster:FindFirstChild("HumanoidRootPart") or monster:FindFirstChild("Head") or monster:FindFirstChildWhichIsA("BasePart");
-	if not attachPart then
-		return;
-	end
-	local bb = Instance.new("BillboardGui");
-	bb.Name = "Chefin_ShadowMan_Billboard";
-	bb.Adornee = attachPart;
-	bb.AlwaysOnTop = true;
-	bb.Size = BILLBOARD_SIZE;
-	bb.StudsOffset = BILLBOARD_OFFSET;
-	bb.MaxDistance = 999999;
-	local txt = Instance.new("TextLabel");
-	txt.Name = "Label";
-	txt.BackgroundTransparency = 1;
-	txt.Size = UDim2.new(1, 0, 1, 0);
-	txt.TextScaled = false;
-	txt.TextSize = BILLBOARD_TEXTSIZE;
-	txt.Font = Enum.Font.GothamBold;
-	txt.TextColor3 = Color3.fromRGB(255, 0, 0);
-	txt.TextStrokeTransparency = 0;
-	txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
-	txt.TextWrapped = true;
-	txt.TextYAlignment = Enum.TextYAlignment.Top;
-	txt.TextXAlignment = Enum.TextXAlignment.Center;
-	txt.Text = "ShadowMan\nDistância: ?m\nSaúde: ?";
-	txt.Parent = bb;
-	bb.Parent = monster;
-	ShadowBillboards[monster] = bb;
+
+local function _scbb(m)
+    if not m or not m.Parent then return end
+    if _sb[m] then return end
+    local ap=m:FindFirstChild(_S({72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116}))
+        or m:FindFirstChild(_S({72,101,97,100}))
+        or m:FindFirstChildWhichIsA(_S({66,97,115,101,80,97,114,116}))
+    if not ap then return end
+    local bb=Instance.new(_S({66,105,108,108,98,111,97,114,100,71,117,105}))
+    bb.Name=_S({67,104,101,102,105,110,95,83,104,97,100,111,119,77,97,110,95,66,98})
+    bb.Adornee=ap
+    bb.AlwaysOnTop=true
+    bb.Size=_bsz
+    bb.StudsOffset=_bof
+    bb.MaxDistance=999999
+    local tx=Instance.new(_S({84,101,120,116,76,97,98,101,108}))
+    tx.Name=_S({76,97,98,101,108})
+    tx.BackgroundTransparency=1
+    tx.Size=UDim2.new(1,0,1,0)
+    tx.TextScaled=false
+    tx.TextSize=_bts
+    tx.Font=Enum.Font.GothamBold
+    tx.TextColor3=Color3.fromRGB(255,0,0)
+    tx.TextStrokeTransparency=0
+    tx.TextStrokeColor3=Color3.fromRGB(0,0,0)
+    tx.TextWrapped=true
+    tx.TextYAlignment=Enum.TextYAlignment.Top
+    tx.TextXAlignment=Enum.TextXAlignment.Center
+    tx.Text=_S({83,104,97,100,111,119,77,97,110,10,68,105,115,116,226,156,162,110,99,105,97,58,32,63,109,10,83,97,250,100,101,58,32,63})
+    tx.Parent=bb
+    bb.Parent=m
+    _sb[m]=bb
 end
-local function Shadow_StartUpdater(monster)
-	local FlatIdent_23BE8 = 0;
-	local bb;
-	local label;
-	local conn;
-	while true do
-		if (FlatIdent_23BE8 == 0) then
-			bb = ShadowBillboards[monster];
-			if not bb then
-				return;
-			end
-			FlatIdent_23BE8 = 1;
-		end
-		if (1 == FlatIdent_23BE8) then
-			label = bb:FindFirstChild("Label");
-			if not label then
-				return;
-			end
-			FlatIdent_23BE8 = 2;
-		end
-		if (FlatIdent_23BE8 == 2) then
-			conn = nil;
-			conn = RunService.RenderStepped:Connect(function()
-				local FlatIdent_781F8 = 0;
-				local myHRP;
-				local attachPart;
-				local humanoid;
-				local distText;
-				local hpText;
-				while true do
-					if (1 == FlatIdent_781F8) then
-						myHRP = GetHRP(LocalPlayer.Character);
-						attachPart = monster:FindFirstChild("HumanoidRootPart") or monster:FindFirstChild("Head") or monster:FindFirstChildWhichIsA("BasePart");
-						FlatIdent_781F8 = 2;
-					end
-					if (FlatIdent_781F8 == 3) then
-						if (myHRP and attachPart) then
-							local FlatIdent_78A9D = 0;
-							local dist;
-							while true do
-								if (FlatIdent_78A9D == 0) then
-									dist = (myHRP.Position - attachPart.Position).Magnitude;
-									distText = ("Distância: %.0fm"):format(dist);
-									break;
-								end
-							end
-						end
-						hpText = "Saúde: ?";
-						FlatIdent_781F8 = 4;
-					end
-					if (2 == FlatIdent_781F8) then
-						humanoid = monster:FindFirstChildOfClass("Humanoid");
-						distText = "Distância: ?m";
-						FlatIdent_781F8 = 3;
-					end
-					if (FlatIdent_781F8 == 0) then
-						if not ShadowESPEnabled then
-							local FlatIdent_27957 = 0;
-							while true do
-								if (0 == FlatIdent_27957) then
-									if conn then
-										conn:Disconnect();
-									end
-									return;
-								end
-							end
-						end
-						if (not monster or not monster.Parent) then
-							local FlatIdent_77C29 = 0;
-							while true do
-								if (FlatIdent_77C29 == 0) then
-									if conn then
-										conn:Disconnect();
-									end
-									return;
-								end
-							end
-						end
-						FlatIdent_781F8 = 1;
-					end
-					if (FlatIdent_781F8 == 4) then
-						if humanoid then
-							hpText = ("Saúde: %.0f"):format(humanoid.Health);
-						end
-						label.Text = "ShadowMan\n" .. distText .. "\n" .. hpText;
-						break;
-					end
-				end
-			end);
-			FlatIdent_23BE8 = 3;
-		end
-		if (3 == FlatIdent_23BE8) then
-			table.insert(ShadowConnections, conn);
-			break;
-		end
-	end
+
+local function _sup(m)
+    local bb=_sb[m]
+    if not bb then return end
+    local lb=bb:FindFirstChild(_S({76,97,98,101,108}))
+    if not lb then return end
+    local cn
+    cn=_svc2.RenderStepped:Connect(function()
+        if not _se then if cn then cn:Disconnect()end return end
+        if not m or not m.Parent then if cn then cn:Disconnect()end return end
+        local mh=_util1(_lp.Character)
+        local ap=m:FindFirstChild(_S({72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116}))or m:FindFirstChild(_S({72,101,97,100}))or m:FindFirstChildWhichIsA(_S({66,97,115,101,80,97,114,116}))
+        local hm=m:FindFirstChildOfClass(_S({72,117,109,97,110,111,105,100}))
+        local dt=_S({68,105,115,116,226,156,162,110,99,105,97,58,32,63,109})
+        if mh and ap then
+            local d=(mh.Position-ap.Position).Magnitude
+            dt=(_S({68,105,115,116,226,156,162,110,99,105,97,58,32,37,46,48,102,109})):format(d)
+        end
+        local ht=_S({83,97,250,100,101,58,32,63})
+        if hm then ht=(_S({83,97,250,100,101,58,32,37,46,48,102})):format(hm.Health)end
+        lb.Text=_S({83,104,97,100,111,119,77,97,110}).."\n"..dt.."\n"..ht
+    end)
+    _0x4d.insert(_sc,cn)
 end
-local function Shadow_Apply()
-	local FlatIdent_703C8 = 0;
-	local monstersFolder;
-	local shadow;
-	while true do
-		if (FlatIdent_703C8 == 2) then
-			if not shadow then
-				return;
-			end
-			Shadow_CreateHighlight(shadow);
-			FlatIdent_703C8 = 3;
-		end
-		if (FlatIdent_703C8 == 0) then
-			if not ShadowESPEnabled then
-				return;
-			end
-			monstersFolder = workspace:FindFirstChild("CurrentMonsters");
-			FlatIdent_703C8 = 1;
-		end
-		if (FlatIdent_703C8 == 1) then
-			if not monstersFolder then
-				return;
-			end
-			shadow = monstersFolder:FindFirstChild("ShadowMan");
-			FlatIdent_703C8 = 2;
-		end
-		if (FlatIdent_703C8 == 3) then
-			Shadow_CreateBillboard(shadow);
-			Shadow_StartUpdater(shadow);
-			break;
-		end
-	end
+
+local function _sap()
+    if not _se then return end
+    local mf=_0x2b:FindFirstChild(_S({67,117,114,114,101,110,116,77,111,110,115,116,101,114,115}))
+    if not mf then return end
+    local sw=mf:FindFirstChild(_S({83,104,97,100,111,119,77,97,110}))
+    if not sw then return end
+    _sch(sw);_scbb(sw);_sup(sw)
 end
-local function Shadow_StartWatcher()
-	local FlatIdent_1B1BA = 0;
-	local monstersFolder;
-	local conn1;
-	while true do
-		if (FlatIdent_1B1BA == 0) then
-			monstersFolder = workspace:FindFirstChild("CurrentMonsters");
-			if not monstersFolder then
-				return;
-			end
-			FlatIdent_1B1BA = 1;
-		end
-		if (FlatIdent_1B1BA == 1) then
-			conn1 = monstersFolder.ChildAdded:Connect(function(child)
-				if not ShadowESPEnabled then
-					return;
-				end
-				if (child.Name == "ShadowMan") then
-					local FlatIdent_8DCA9 = 0;
-					while true do
-						if (FlatIdent_8DCA9 == 0) then
-							task.wait(0.15);
-							Shadow_Apply();
-							break;
-						end
-					end
-				end
-			end);
-			table.insert(ShadowConnections, conn1);
-			break;
-		end
-	end
+
+local function _swat()
+    local mf=_0x2b:FindFirstChild(_S({67,117,114,114,101,110,116,77,111,110,115,116,101,114,115}))
+    if not mf then return end
+    local c1=mf.ChildAdded:Connect(function(ch)
+        if not _se then return end
+        if ch.Name==_S({83,104,97,100,111,119,77,97,110})then
+            _0x3c.wait(0.15);_sap()
+        end
+    end)
+    _0x4d.insert(_sc,c1)
 end
-local PlayersESPEnabled = false;
-local PlayerConnections = {};
-local PlayerHighlights = {};
-local PlayerBillboards = {};
-local function Player_DisconnectAll()
-	local FlatIdent_39EBF = 0;
-	while true do
-		if (FlatIdent_39EBF == 0) then
-			for _, c in ipairs(PlayerConnections) do
-				pcall(function()
-					c:Disconnect();
-				end);
-			end
-			PlayerConnections = {};
-			break;
-		end
-	end
+
+-- Players ESP
+local _pe=false
+local _pc={}
+local _ph={}
+local _pb={}
+
+local function _pdc()
+    for _,c in _0x7g(_pc)do _0x6f(function()c:Disconnect()end)end
+    _pc={}
 end
-local function Player_Clear()
-	local FlatIdent_8BF78 = 0;
-	while true do
-		if (FlatIdent_8BF78 == 2) then
-			Player_DisconnectAll();
-			break;
-		end
-		if (1 == FlatIdent_8BF78) then
-			PlayerHighlights = {};
-			PlayerBillboards = {};
-			FlatIdent_8BF78 = 2;
-		end
-		if (FlatIdent_8BF78 == 0) then
-			for _, hl in pairs(PlayerHighlights) do
-				SafeDestroy(hl);
-			end
-			for _, bb in pairs(PlayerBillboards) do
-				SafeDestroy(bb);
-			end
-			FlatIdent_8BF78 = 1;
-		end
-	end
+
+local function _pcl()
+    for _,v in _0x8h(_ph)do _util2(v)end
+    for _,v in _0x8h(_pb)do _util2(v)end
+    _ph={};_pb={};_pdc()
 end
-local function Player_CreateHighlight(char)
-	local FlatIdent_2B986 = 0;
-	local hl;
-	while true do
-		if (FlatIdent_2B986 == 0) then
-			if (not char or not char.Parent) then
-				return;
-			end
-			if PlayerHighlights[char] then
-				return;
-			end
-			hl = Instance.new("Highlight");
-			hl.Name = "Chefin_Player_Highlight";
-			FlatIdent_2B986 = 1;
-		end
-		if (FlatIdent_2B986 == 2) then
-			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
-			hl.Parent = char;
-			PlayerHighlights[char] = hl;
-			break;
-		end
-		if (FlatIdent_2B986 == 1) then
-			hl.Adornee = char;
-			hl.FillTransparency = 0.25;
-			hl.OutlineTransparency = 1;
-			hl.FillColor = Color3.fromRGB(0, 255, 255);
-			FlatIdent_2B986 = 2;
-		end
-	end
+
+local function _pch(ch)
+    if not ch or not ch.Parent then return end
+    if _ph[ch] then return end
+    local h=Instance.new(_S({72,105,103,104,108,105,103,104,116}))
+    h.Name=_S({67,104,101,102,105,110,95,80,108,97,121,101,114,95,72,108})
+    h.Adornee=ch
+    h.FillTransparency=0.25
+    h.OutlineTransparency=1
+    h.FillColor=Color3.fromRGB(0,255,255)
+    h.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop
+    h.Parent=ch
+    _ph[ch]=h
 end
-local function Player_CreateBillboard(char, plrName)
-	local FlatIdent_189F0 = 0;
-	local attachPart;
-	local bb;
-	local txt;
-	while true do
-		if (4 == FlatIdent_189F0) then
-			txt.TextSize = BILLBOARD_TEXTSIZE;
-			txt.Font = Enum.Font.GothamBold;
-			txt.TextColor3 = Color3.fromRGB(0, 255, 255);
-			txt.TextStrokeTransparency = 0;
-			FlatIdent_189F0 = 5;
-		end
-		if (FlatIdent_189F0 == 1) then
-			bb = Instance.new("BillboardGui");
-			bb.Name = "Chefin_Player_Billboard";
-			bb.Adornee = attachPart;
-			bb.AlwaysOnTop = true;
-			FlatIdent_189F0 = 2;
-		end
-		if (3 == FlatIdent_189F0) then
-			txt.Name = "Label";
-			txt.BackgroundTransparency = 1;
-			txt.Size = UDim2.new(1, 0, 1, 0);
-			txt.TextScaled = false;
-			FlatIdent_189F0 = 4;
-		end
-		if (FlatIdent_189F0 == 2) then
-			bb.Size = BILLBOARD_SIZE;
-			bb.StudsOffset = BILLBOARD_OFFSET;
-			bb.MaxDistance = 999999;
-			txt = Instance.new("TextLabel");
-			FlatIdent_189F0 = 3;
-		end
-		if (FlatIdent_189F0 == 5) then
-			txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
-			txt.TextWrapped = true;
-			txt.TextYAlignment = Enum.TextYAlignment.Top;
-			txt.TextXAlignment = Enum.TextXAlignment.Center;
-			FlatIdent_189F0 = 6;
-		end
-		if (FlatIdent_189F0 == 6) then
-			txt.Text = plrName .. "\nDistância: ?m";
-			txt.Parent = bb;
-			bb.Parent = char;
-			PlayerBillboards[char] = bb;
-			break;
-		end
-		if (FlatIdent_189F0 == 0) then
-			if (not char or not char.Parent) then
-				return;
-			end
-			if PlayerBillboards[char] then
-				return;
-			end
-			attachPart = char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Head") or char:FindFirstChildWhichIsA("BasePart");
-			if not attachPart then
-				return;
-			end
-			FlatIdent_189F0 = 1;
-		end
-	end
+
+local function _pcbb(ch,pn)
+    if not ch or not ch.Parent then return end
+    if _pb[ch] then return end
+    local ap=ch:FindFirstChild(_S({72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116}))or ch:FindFirstChild(_S({72,101,97,100}))or ch:FindFirstChildWhichIsA(_S({66,97,115,101,80,97,114,116}))
+    if not ap then return end
+    local bb=Instance.new(_S({66,105,108,108,98,111,97,114,100,71,117,105}))
+    bb.Name=_S({67,104,101,102,105,110,95,80,108,97,121,101,114,95,66,98})
+    bb.Adornee=ap;bb.AlwaysOnTop=true;bb.Size=_bsz;bb.StudsOffset=_bof;bb.MaxDistance=999999
+    local tx=Instance.new(_S({84,101,120,116,76,97,98,101,108}))
+    tx.Name=_S({76,97,98,101,108});tx.BackgroundTransparency=1;tx.Size=UDim2.new(1,0,1,0)
+    tx.TextScaled=false;tx.TextSize=_bts;tx.Font=Enum.Font.GothamBold
+    tx.TextColor3=Color3.fromRGB(0,255,255);tx.TextStrokeTransparency=0
+    tx.TextStrokeColor3=Color3.fromRGB(0,0,0);tx.TextWrapped=true
+    tx.TextYAlignment=Enum.TextYAlignment.Top;tx.TextXAlignment=Enum.TextXAlignment.Center
+    tx.Text=pn.."\n".._S({68,105,115,116,226,156,162,110,99,105,97,58,32,63,109})
+    tx.Parent=bb;bb.Parent=ch;_pb[ch]=bb
 end
-local function Player_StartUpdater(char, plrName)
-	local FlatIdent_5477B = 0;
-	local bb;
-	local label;
-	local conn;
-	while true do
-		if (1 == FlatIdent_5477B) then
-			label = bb:FindFirstChild("Label");
-			if not label then
-				return;
-			end
-			FlatIdent_5477B = 2;
-		end
-		if (FlatIdent_5477B == 3) then
-			table.insert(PlayerConnections, conn);
-			break;
-		end
-		if (FlatIdent_5477B == 0) then
-			bb = PlayerBillboards[char];
-			if not bb then
-				return;
-			end
-			FlatIdent_5477B = 1;
-		end
-		if (FlatIdent_5477B == 2) then
-			conn = nil;
-			conn = RunService.RenderStepped:Connect(function()
-				local FlatIdent_2388 = 0;
-				local myHRP;
-				local theirHRP;
-				local distText;
-				while true do
-					if (FlatIdent_2388 == 3) then
-						label.Text = plrName .. "\n" .. distText;
-						break;
-					end
-					if (FlatIdent_2388 == 2) then
-						distText = "Distância: ?m";
-						if (myHRP and theirHRP) then
-							local FlatIdent_90A41 = 0;
-							local dist;
-							while true do
-								if (FlatIdent_90A41 == 0) then
-									dist = (myHRP.Position - theirHRP.Position).Magnitude;
-									distText = ("Distância: %.0fm"):format(dist);
-									break;
-								end
-							end
-						end
-						FlatIdent_2388 = 3;
-					end
-					if (1 == FlatIdent_2388) then
-						myHRP = GetHRP(LocalPlayer.Character);
-						theirHRP = GetHRP(char);
-						FlatIdent_2388 = 2;
-					end
-					if (FlatIdent_2388 == 0) then
-						if not PlayersESPEnabled then
-							local FlatIdent_61800 = 0;
-							while true do
-								if (FlatIdent_61800 == 0) then
-									if conn then
-										conn:Disconnect();
-									end
-									return;
-								end
-							end
-						end
-						if (not char or not char.Parent) then
-							local FlatIdent_89C1C = 0;
-							while true do
-								if (FlatIdent_89C1C == 0) then
-									if conn then
-										conn:Disconnect();
-									end
-									return;
-								end
-							end
-						end
-						FlatIdent_2388 = 1;
-					end
-				end
-			end);
-			FlatIdent_5477B = 3;
-		end
-	end
+
+local function _pup(ch,pn)
+    local bb=_pb[ch]
+    if not bb then return end
+    local lb=bb:FindFirstChild(_S({76,97,98,101,108}))
+    if not lb then return end
+    local cn
+    cn=_svc2.RenderStepped:Connect(function()
+        if not _pe then if cn then cn:Disconnect()end return end
+        if not ch or not ch.Parent then if cn then cn:Disconnect()end return end
+        local mh=_util1(_lp.Character)
+        local th=_util1(ch)
+        local dt=_S({68,105,115,116,226,156,162,110,99,105,97,58,32,63,109})
+        if mh and th then
+            local d=(mh.Position-th.Position).Magnitude
+            dt=(_S({68,105,115,116,226,156,162,110,99,105,97,58,32,37,46,48,102,109})):format(d)
+        end
+        lb.Text=pn.."\n"..dt
+    end)
+    _0x4d.insert(_pc,cn)
 end
-local function Player_ApplyToPlayer(plr)
-	local FlatIdent_6D9D2 = 0;
-	local char;
-	while true do
-		if (FlatIdent_6D9D2 == 3) then
-			Player_StartUpdater(char, plr.Name);
-			break;
-		end
-		if (FlatIdent_6D9D2 == 2) then
-			Player_CreateHighlight(char);
-			Player_CreateBillboard(char, plr.Name);
-			FlatIdent_6D9D2 = 3;
-		end
-		if (FlatIdent_6D9D2 == 0) then
-			if not PlayersESPEnabled then
-				return;
-			end
-			if (plr == LocalPlayer) then
-				return;
-			end
-			FlatIdent_6D9D2 = 1;
-		end
-		if (FlatIdent_6D9D2 == 1) then
-			char = plr.Character;
-			if not char then
-				return;
-			end
-			FlatIdent_6D9D2 = 2;
-		end
-	end
+
+local function _patp(pl)
+    if not _pe then return end
+    if pl==_lp then return end
+    local ch=pl.Character
+    if not ch then return end
+    _pch(ch);_pcbb(ch,pl.Name);_pup(ch,pl.Name)
 end
-local function Player_StartWatcher()
-	local FlatIdent_1FC27 = 0;
-	local conn1;
-	local conn2;
-	while true do
-		if (FlatIdent_1FC27 == 1) then
-			table.insert(PlayerConnections, conn1);
-			table.insert(PlayerConnections, conn2);
-			FlatIdent_1FC27 = 2;
-		end
-		if (FlatIdent_1FC27 == 2) then
-			for _, plr in ipairs(Players:GetPlayers()) do
-				if (plr ~= LocalPlayer) then
-					local FlatIdent_2E34E = 0;
-					local connChar;
-					while true do
-						if (FlatIdent_2E34E == 0) then
-							if plr.Character then
-								Player_ApplyToPlayer(plr);
-							end
-							connChar = plr.CharacterAdded:Connect(function()
-								local FlatIdent_4223E = 0;
-								while true do
-									if (FlatIdent_4223E == 0) then
-										task.wait(0.2);
-										Player_ApplyToPlayer(plr);
-										break;
-									end
-								end
-							end);
-							FlatIdent_2E34E = 1;
-						end
-						if (FlatIdent_2E34E == 1) then
-							table.insert(PlayerConnections, connChar);
-							break;
-						end
-					end
-				end
-			end
-			break;
-		end
-		if (FlatIdent_1FC27 == 0) then
-			conn1 = Players.PlayerAdded:Connect(function(plr)
-				local FlatIdent_4E1DE = 0;
-				local connChar;
-				while true do
-					if (0 == FlatIdent_4E1DE) then
-						if not PlayersESPEnabled then
-							return;
-						end
-						connChar = nil;
-						FlatIdent_4E1DE = 1;
-					end
-					if (FlatIdent_4E1DE == 1) then
-						connChar = plr.CharacterAdded:Connect(function()
-							local FlatIdent_272FB = 0;
-							while true do
-								if (FlatIdent_272FB == 0) then
-									task.wait(0.2);
-									Player_ApplyToPlayer(plr);
-									break;
-								end
-							end
-						end);
-						table.insert(PlayerConnections, connChar);
-						break;
-					end
-				end
-			end);
-			conn2 = Players.PlayerRemoving:Connect(function(plr)
-				if plr.Character then
-					local FlatIdent_8ABD6 = 0;
-					while true do
-						if (FlatIdent_8ABD6 == 0) then
-							SafeDestroy(PlayerHighlights[plr.Character]);
-							SafeDestroy(PlayerBillboards[plr.Character]);
-							FlatIdent_8ABD6 = 1;
-						end
-						if (FlatIdent_8ABD6 == 1) then
-							PlayerHighlights[plr.Character] = nil;
-							PlayerBillboards[plr.Character] = nil;
-							break;
-						end
-					end
-				end
-			end);
-			FlatIdent_1FC27 = 1;
-		end
-	end
+
+local function _pwat()
+    local c1=_svc1.PlayerAdded:Connect(function(pl)
+        if not _pe then return end
+        local cc;cc=pl.CharacterAdded:Connect(function()
+            _0x3c.wait(0.2);_patp(pl)
+        end)
+        _0x4d.insert(_pc,cc)
+    end)
+    local c2=_svc1.PlayerRemoving:Connect(function(pl)
+        if pl.Character then
+            _util2(_ph[pl.Character]);_util2(_pb[pl.Character])
+            _ph[pl.Character]=nil;_pb[pl.Character]=nil
+        end
+    end)
+    _0x4d.insert(_pc,c1);_0x4d.insert(_pc,c2)
+    for _,pl in _0x7g(_svc1:GetPlayers())do
+        if pl~=_lp then
+            if pl.Character then _patp(pl)end
+            local cc=pl.CharacterAdded:Connect(function()
+                _0x3c.wait(0.2);_patp(pl)
+            end)
+            _0x4d.insert(_pc,cc)
+        end
+    end
 end
-local ItemsESPEnabled = false;
-local ItemsConnections = {};
-local ItemsHighlights = {};
-local ItemsBillboards = {};
-local function Items_DisconnectAll()
-	local FlatIdent_6AEED = 0;
-	while true do
-		if (FlatIdent_6AEED == 0) then
-			for _, c in ipairs(ItemsConnections) do
-				pcall(function()
-					c:Disconnect();
-				end);
-			end
-			ItemsConnections = {};
-			break;
-		end
-	end
+
+-- Items ESP
+local _ie=false
+local _ic={}
+local _ih={}
+local _ib={}
+
+local function _idc()
+    for _,c in _0x7g(_ic)do _0x6f(function()c:Disconnect()end)end
+    _ic={}
 end
-local function Items_Clear()
-	local FlatIdent_8DAB1 = 0;
-	while true do
-		if (FlatIdent_8DAB1 == 0) then
-			for item, hl in pairs(ItemsHighlights) do
-				SafeDestroy(hl);
-			end
-			for item, bb in pairs(ItemsBillboards) do
-				SafeDestroy(bb);
-			end
-			FlatIdent_8DAB1 = 1;
-		end
-		if (FlatIdent_8DAB1 == 2) then
-			Items_DisconnectAll();
-			break;
-		end
-		if (FlatIdent_8DAB1 == 1) then
-			ItemsHighlights = {};
-			ItemsBillboards = {};
-			FlatIdent_8DAB1 = 2;
-		end
-	end
+
+local function _icl()
+    for _,v in _0x8h(_ih)do _util2(v)end
+    for _,v in _0x8h(_ib)do _util2(v)end
+    _ih={};_ib={};_idc()
 end
-local function Items_CreateHighlight(item)
-	local FlatIdent_5E109 = 0;
-	local hl;
-	while true do
-		if (1 == FlatIdent_5E109) then
-			hl.Adornee = item;
-			hl.FillTransparency = 0.25;
-			hl.OutlineTransparency = 1;
-			hl.FillColor = Color3.fromRGB(0, 255, 0);
-			FlatIdent_5E109 = 2;
-		end
-		if (FlatIdent_5E109 == 2) then
-			hl.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop;
-			hl.Parent = item;
-			ItemsHighlights[item] = hl;
-			break;
-		end
-		if (FlatIdent_5E109 == 0) then
-			if (not item or not item.Parent) then
-				return;
-			end
-			if ItemsHighlights[item] then
-				return;
-			end
-			hl = Instance.new("Highlight");
-			hl.Name = "Chefin_Item_Highlight";
-			FlatIdent_5E109 = 1;
-		end
-	end
+
+local function _ich(it)
+    if not it or not it.Parent then return end
+    if _ih[it] then return end
+    local h=Instance.new(_S({72,105,103,104,108,105,103,104,116}))
+    h.Name=_S({67,104,101,102,105,110,95,73,116,101,109,95,72,108})
+    h.Adornee=it;h.FillTransparency=0.25;h.OutlineTransparency=1
+    h.FillColor=Color3.fromRGB(0,255,0)
+    h.DepthMode=Enum.HighlightDepthMode.AlwaysOnTop
+    h.Parent=it;_ih[it]=h
 end
-local function Items_CreateBillboard(item)
-	local FlatIdent_6B92D = 0;
-	local attachPart;
-	local bb;
-	local txt;
-	while true do
-		if (FlatIdent_6B92D == 6) then
-			txt.TextColor3 = Color3.fromRGB(0, 255, 0);
-			txt.TextStrokeTransparency = 0;
-			txt.TextStrokeColor3 = Color3.fromRGB(0, 0, 0);
-			FlatIdent_6B92D = 7;
-		end
-		if (FlatIdent_6B92D == 8) then
-			txt.Text = item.Name;
-			txt.Parent = bb;
-			bb.Parent = item;
-			FlatIdent_6B92D = 9;
-		end
-		if (FlatIdent_6B92D == 1) then
-			if not attachPart then
-				return;
-			end
-			bb = Instance.new("BillboardGui");
-			bb.Name = "Chefin_Item_Billboard";
-			FlatIdent_6B92D = 2;
-		end
-		if (3 == FlatIdent_6B92D) then
-			bb.StudsOffset = Vector3.new(0, 1.8, 0);
-			bb.MaxDistance = 999999;
-			txt = Instance.new("TextLabel");
-			FlatIdent_6B92D = 4;
-		end
-		if (FlatIdent_6B92D == 0) then
-			if (not item or not item.Parent) then
-				return;
-			end
-			if ItemsBillboards[item] then
-				return;
-			end
-			attachPart = item:FindFirstChild("Handle") or item:FindFirstChild("HumanoidRootPart") or item:FindFirstChildWhichIsA("BasePart");
-			FlatIdent_6B92D = 1;
-		end
-		if (9 == FlatIdent_6B92D) then
-			ItemsBillboards[item] = bb;
-			break;
-		end
-		if (FlatIdent_6B92D == 2) then
-			bb.Adornee = attachPart;
-			bb.AlwaysOnTop = true;
-			bb.Size = UDim2.new(0, 140, 0, 24);
-			FlatIdent_6B92D = 3;
-		end
-		if (4 == FlatIdent_6B92D) then
-			txt.Name = "Label";
-			txt.BackgroundTransparency = 1;
-			txt.Size = UDim2.new(1, 0, 1, 0);
-			FlatIdent_6B92D = 5;
-		end
-		if (FlatIdent_6B92D == 5) then
-			txt.TextScaled = false;
-			txt.TextSize = 12;
-			txt.Font = Enum.Font.GothamBold;
-			FlatIdent_6B92D = 6;
-		end
-		if (FlatIdent_6B92D == 7) then
-			txt.TextWrapped = true;
-			txt.TextYAlignment = Enum.TextYAlignment.Center;
-			txt.TextXAlignment = Enum.TextXAlignment.Center;
-			FlatIdent_6B92D = 8;
-		end
-	end
+
+local function _icbb(it)
+    if not it or not it.Parent then return end
+    if _ib[it] then return end
+    local ap=it:FindFirstChild(_S({72,97,110,100,108,101}))or it:FindFirstChild(_S({72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116}))or it:FindFirstChildWhichIsA(_S({66,97,115,101,80,97,114,116}))
+    if not ap then return end
+    local bb=Instance.new(_S({66,105,108,108,98,111,97,114,100,71,117,105}))
+    bb.Name=_S({67,104,101,102,105,110,95,73,116,101,109,95,66,98})
+    bb.Adornee=ap;bb.AlwaysOnTop=true
+    bb.Size=UDim2.new(0,140,0,24);bb.StudsOffset=Vector3.new(0,1.8,0);bb.MaxDistance=999999
+    local tx=Instance.new(_S({84,101,120,116,76,97,98,101,108}))
+    tx.Name=_S({76,97,98,101,108});tx.BackgroundTransparency=1;tx.Size=UDim2.new(1,0,1,0)
+    tx.TextScaled=false;tx.TextSize=12;tx.Font=Enum.Font.GothamBold
+    tx.TextColor3=Color3.fromRGB(0,255,0);tx.TextStrokeTransparency=0
+    tx.TextStrokeColor3=Color3.fromRGB(0,0,0);tx.TextWrapped=true
+    tx.TextYAlignment=Enum.TextYAlignment.Center;tx.TextXAlignment=Enum.TextXAlignment.Center
+    tx.Text=it.Name;tx.Parent=bb;bb.Parent=it;_ib[it]=bb
 end
-local function Items_ApplyToItem(item)
-	local FlatIdent_912A7 = 0;
-	while true do
-		if (FlatIdent_912A7 == 0) then
-			if not ItemsESPEnabled then
-				return;
-			end
-			if (not item or not item.Parent) then
-				return;
-			end
-			FlatIdent_912A7 = 1;
-		end
-		if (FlatIdent_912A7 == 1) then
-			Items_CreateHighlight(item);
-			Items_CreateBillboard(item);
-			break;
-		end
-	end
+
+local function _iati(it)
+    if not _ie then return end
+    if not it or not it.Parent then return end
+    _ich(it);_icbb(it)
 end
-local function Items_StartWatcher()
-	local FlatIdent_44652 = 0;
-	local folder;
-	local conn1;
-	local conn2;
-	while true do
-		if (FlatIdent_44652 == 1) then
-			for _, obj in ipairs(folder:GetChildren()) do
-				Items_ApplyToItem(obj);
-			end
-			conn1 = folder.ChildAdded:Connect(function(child)
-				local FlatIdent_5724B = 0;
-				while true do
-					if (FlatIdent_5724B == 1) then
-						Items_ApplyToItem(child);
-						break;
-					end
-					if (0 == FlatIdent_5724B) then
-						if not ItemsESPEnabled then
-							return;
-						end
-						task.wait(0.05);
-						FlatIdent_5724B = 1;
-					end
-				end
-			end);
-			FlatIdent_44652 = 2;
-		end
-		if (3 == FlatIdent_44652) then
-			table.insert(ItemsConnections, conn2);
-			break;
-		end
-		if (FlatIdent_44652 == 2) then
-			conn2 = folder.ChildRemoved:Connect(function(child)
-				local FlatIdent_83844 = 0;
-				while true do
-					if (FlatIdent_83844 == 0) then
-						SafeDestroy(ItemsHighlights[child]);
-						SafeDestroy(ItemsBillboards[child]);
-						FlatIdent_83844 = 1;
-					end
-					if (1 == FlatIdent_83844) then
-						ItemsHighlights[child] = nil;
-						ItemsBillboards[child] = nil;
-						break;
-					end
-				end
-			end);
-			table.insert(ItemsConnections, conn1);
-			FlatIdent_44652 = 3;
-		end
-		if (FlatIdent_44652 == 0) then
-			folder = workspace:FindFirstChild("Pickups");
-			if not folder then
-				return;
-			end
-			FlatIdent_44652 = 1;
-		end
-	end
+
+local function _iwat()
+    local fd=_0x2b:FindFirstChild(_S({80,105,99,107,117,112,115}))
+    if not fd then return end
+    for _,o in _0x7g(fd:GetChildren())do _iati(o)end
+    local c1=fd.ChildAdded:Connect(function(ch)
+        if not _ie then return end
+        _0x3c.wait(0.05);_iati(ch)
+    end)
+    local c2=fd.ChildRemoved:Connect(function(ch)
+        _util2(_ih[ch]);_util2(_ib[ch]);_ih[ch]=nil;_ib[ch]=nil
+    end)
+    _0x4d.insert(_ic,c1);_0x4d.insert(_ic,c2)
 end
-TabOP:CreateButton({Name="Set Shotgun Ammo",Callback=function()
-	local FlatIdent_2593F = 0;
-	local args;
-	while true do
-		if (FlatIdent_2593F == 0) then
-			args = {"Shotgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Shotgun"),1000000};
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(args));
-			break;
-		end
-	end
-end});
-TabOP:CreateButton({Name="Set Handgun Ammo",Callback=function()
-	local FlatIdent_3B08E = 0;
-	local args;
-	while true do
-		if (FlatIdent_3B08E == 0) then
-			args = {"Handgun",game:GetService("Players").LocalPlayer.Character:WaitForChild("Handgun"),1000000};
-			game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("RefillGun"):FireServer(unpack(args));
-			break;
-		end
-	end
-end});
-local KillShadowManEnabled = false;
-local KillMode = "Shotgun";
-local function GetShadowHead()
-	local FlatIdent_94AF7 = 0;
-	local folder;
-	local shadow;
-	while true do
-		if (FlatIdent_94AF7 == 0) then
-			folder = workspace:FindFirstChild("CurrentMonsters");
-			if not folder then
-				return nil;
-			end
-			FlatIdent_94AF7 = 1;
-		end
-		if (FlatIdent_94AF7 == 1) then
-			shadow = folder:FindFirstChild("ShadowMan");
-			if not shadow then
-				return nil;
-			end
-			FlatIdent_94AF7 = 2;
-		end
-		if (2 == FlatIdent_94AF7) then
-			return shadow:FindFirstChild("Head");
-		end
-	end
+
+-- OP: Ammo
+_tab2:CreateButton({
+    Name=_S({83,101,116,32,83,104,111,116,103,117,110,32,65,109,109,111}),
+    Callback=function()
+        local a={_S({83,104,111,116,103,117,110}),_0x1a:GetService(_S({80,108,97,121,101,114,115})).LocalPlayer.Character:WaitForChild(_S({83,104,111,116,103,117,110})),1000000}
+        _0x1a:GetService(_S({82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101})):WaitForChild(_S({82,101,109,111,116,101,115})):WaitForChild(_S({82,101,102,105,108,108,71,117,110})):FireServer(_0xbk(a))
+    end,
+})
+
+_tab2:CreateButton({
+    Name=_S({83,101,116,32,72,97,110,100,103,117,110,32,65,109,109,111}),
+    Callback=function()
+        local a={_S({72,97,110,100,103,117,110}),_0x1a:GetService(_S({80,108,97,121,101,114,115})).LocalPlayer.Character:WaitForChild(_S({72,97,110,100,103,117,110})),1000000}
+        _0x1a:GetService(_S({82,101,112,108,105,99,97,116,101,100,83,116,111,114,97,103,101})):WaitForChild(_S({82,101,109,111,116,101,115})):WaitForChild(_S({82,101,102,105,108,108,71,117,110})):FireServer(_0xbk(a))
+    end,
+})
+
+-- OP: Open Trunk
+_tab2:CreateButton({
+    Name=_S({79,112,101,110,32,84,114,117,110,107,32,67,97,114}),
+    Callback=function()
+        _0x2b:WaitForChild(_S({86,101,104,105,99,108,101,115}))
+            :WaitForChild(_S({67,104,114,121,115,108,101,114,86,97,108,105,97,110,116}))
+            :WaitForChild(_S({66,111,100,121,87,111,114,107}))
+            :WaitForChild(_S({66,111,111,116}))
+            :WaitForChild(_S({73,110,116,101,114,97,99,116,82,101,109,111,116,101}))
+            :FireServer()
+    end,
+})
+
+-- OP: Kill ShadowMan
+local _km=true
+local _kmode=_S({83,104,111,116,103,117,110})
+
+local function _gsh()
+    local fd=_0x2b:FindFirstChild(_S({67,117,114,114,101,110,116,77,111,110,115,116,101,114,115}))
+    if not fd then return nil end
+    local sw=fd:FindFirstChild(_S({83,104,97,100,111,119,77,97,110}))
+    if not sw then return nil end
+    return sw:FindFirstChild(_S({72,101,97,100}))
 end
-local function FireDamageEvent(toolName)
-	local FlatIdent_3B868 = 0;
-	local head;
-	local tool;
-	local backpack;
-	local remote;
-	local args;
-	while true do
-		if (FlatIdent_3B868 == 3) then
-			args = {head,Vector3.new(56.75334167480469, 45.881412506103516, -343.3638916015625)};
-			pcall(function()
-				remote:FireServer(unpack(args));
-			end);
-			break;
-		end
-		if (FlatIdent_3B868 == 1) then
-			backpack = LocalPlayer:FindFirstChild("Backpack");
-			if backpack then
-				tool = backpack:FindFirstChild(toolName);
-			end
-			if not tool then
-				local FlatIdent_7695C = 0;
-				local char;
-				while true do
-					if (FlatIdent_7695C == 0) then
-						char = LocalPlayer.Character;
-						if char then
-							tool = char:FindFirstChild(toolName);
-						end
-						break;
-					end
-				end
-			end
-			FlatIdent_3B868 = 2;
-		end
-		if (2 == FlatIdent_3B868) then
-			if not tool then
-				return;
-			end
-			remote = tool:FindFirstChild("DamageTargetEvent");
-			if not remote then
-				return;
-			end
-			FlatIdent_3B868 = 3;
-		end
-		if (FlatIdent_3B868 == 0) then
-			head = GetShadowHead();
-			if not head then
-				return;
-			end
-			tool = nil;
-			FlatIdent_3B868 = 1;
-		end
-	end
+
+local function _fde(tn)
+    local hd=_gsh()
+    if not hd then return end
+    local tl=nil
+    local bp=_lp:FindFirstChild(_S({66,97,99,107,112,97,99,107}))
+    if bp then tl=bp:FindFirstChild(tn)end
+    if not tl then
+        local ch=_lp.Character
+        if ch then tl=ch:FindFirstChild(tn)end
+    end
+    if not tl then return end
+    local ev=tl:FindFirstChild(_S({68,97,109,97,103,101,84,97,114,103,101,116,69,118,101,110,116}))
+    if not ev then return end
+    _0x6f(function()
+        ev:FireServer(hd,Vector3.new(56.75334167480469,45.881412506103516,-343.3638916015625))
+    end)
 end
-task.spawn(function()
-	while task.wait(0.15) do
-		if KillShadowManEnabled then
-			if (KillMode == "Shotgun") then
-				FireDamageEvent("Shotgun");
-			else
-				FireDamageEvent("Handgun");
-			end
-		end
-	end
-end);
-TabOP:CreateDropdown({Name="Kill Mode",Options={"Shotgun","Handgun"},CurrentOption={"Shotgun"},Flag="Chefin_KillMode",Callback=function(Option)
-	if (typeof(Option) == "table") then
-		KillMode = Option[1];
-	else
-		KillMode = tostring(Option);
-	end
-end});
-TabOP:CreateToggle({Name="KillShadowMan",CurrentValue=false,Flag="Chefin_KillShadowMan",Callback=function(Value)
-	KillShadowManEnabled = Value;
-end});
-local Players = game:GetService("Players");
-local RunService = game:GetService("RunService");
-local LocalPlayer = Players.LocalPlayer;
-local SpectateShadow = false;
-local DefaultSubject = nil;
-local DefaultCamType = nil;
-local CamConn = nil;
-local function GetShadowMan()
-	local FlatIdent_5A134 = 0;
-	local monsters;
-	while true do
-		if (FlatIdent_5A134 == 0) then
-			monsters = workspace:FindFirstChild("CurrentMonsters");
-			if not monsters then
-				return nil;
-			end
-			FlatIdent_5A134 = 1;
-		end
-		if (FlatIdent_5A134 == 1) then
-			return monsters:FindFirstChild("ShadowMan");
-		end
-	end
+
+_0x3c.spawn(function()
+    while _0x3c.wait(0.15)do
+        if _km then _fde(_kmode)end
+    end
+end)
+
+_tab2:CreateDropdown({
+    Name=_S({75,105,108,108,32,77,111,100,101}),
+    Options={_S({83,104,111,116,103,117,110}),_S({72,97,110,100,103,117,110})},
+    CurrentOption={_S({83,104,111,116,103,117,110})},
+    Flag=_S({67,104,101,102,105,110,95,75,105,108,108,77,111,100,101}),
+    Callback=function(o)
+        if _0xaj(o)==_S({116,97,98,108,101})then _kmode=o[1]
+        else _kmode=_0x9i(o)end
+    end,
+})
+
+_tab2:CreateToggle({
+    Name=_S({75,105,108,108,83,104,97,100,111,119,77,97,110}),
+    CurrentValue=false,
+    Flag=_S({67,104,101,102,105,110,95,75,105,108,108,83,104,97,100,111,119,77,97,110}),
+    Callback=function(v)_km=v end,
+})
+
+-- Spectate ShadowMan
+local _ss=false
+local _ds=nil
+local _dc=nil
+local _cc=nil
+
+local function _gsm()
+    local m=_0x2b:FindFirstChild(_S({67,117,114,114,101,110,116,77,111,110,115,116,101,114,115}))
+    if not m then return nil end
+    return m:FindFirstChild(_S({83,104,97,100,111,119,77,97,110}))
 end
-local function SaveCamera()
-	local cam = workspace.CurrentCamera;
-	if not cam then
-		return;
-	end
-	DefaultSubject = cam.CameraSubject;
-	DefaultCamType = cam.CameraType;
+
+local function _svcam()
+    local c=_0x2b.CurrentCamera
+    if not c then return end
+    _ds=c.CameraSubject;_dc=c.CameraType
 end
-local function ResetCamera()
-	local cam = workspace.CurrentCamera;
-	if not cam then
-		return;
-	end
-	if DefaultSubject then
-		local FlatIdent_3ACCC = 0;
-		while true do
-			if (FlatIdent_3ACCC == 1) then
-				return;
-			end
-			if (FlatIdent_3ACCC == 0) then
-				cam.CameraType = DefaultCamType or Enum.CameraType.Custom;
-				cam.CameraSubject = DefaultSubject;
-				FlatIdent_3ACCC = 1;
-			end
-		end
-	end
-	local char = LocalPlayer.Character;
-	if char then
-		local FlatIdent_835BC = 0;
-		local hum;
-		while true do
-			if (0 == FlatIdent_835BC) then
-				hum = char:FindFirstChildOfClass("Humanoid");
-				if hum then
-					local FlatIdent_145D2 = 0;
-					while true do
-						if (FlatIdent_145D2 == 0) then
-							cam.CameraType = Enum.CameraType.Custom;
-							cam.CameraSubject = hum;
-							break;
-						end
-					end
-				end
-				break;
-			end
-		end
-	end
+
+local function _rscam()
+    local c=_0x2b.CurrentCamera
+    if not c then return end
+    if _ds then c.CameraType=_dc or Enum.CameraType.Custom;c.CameraSubject=_ds;return end
+    local ch=_lp.Character
+    if ch then
+        local hm=ch:FindFirstChildOfClass(_S({72,117,109,97,110,111,105,100}))
+        if hm then c.CameraType=Enum.CameraType.Custom;c.CameraSubject=hm end
+    end
 end
-local function StopSpectate()
-	local FlatIdent_6D884 = 0;
-	while true do
-		if (0 == FlatIdent_6D884) then
-			if CamConn then
-				local FlatIdent_5AA23 = 0;
-				while true do
-					if (FlatIdent_5AA23 == 0) then
-						CamConn:Disconnect();
-						CamConn = nil;
-						break;
-					end
-				end
-			end
-			ResetCamera();
-			break;
-		end
-	end
+
+local function _stsp()
+    if _cc then _cc:Disconnect();_cc=nil end
+    _rscam()
 end
-local function StartSpectate()
-	local cam = workspace.CurrentCamera;
-	if not cam then
-		return;
-	end
-	SaveCamera();
-	if CamConn then
-		local FlatIdent_3F15E = 0;
-		while true do
-			if (FlatIdent_3F15E == 0) then
-				CamConn:Disconnect();
-				CamConn = nil;
-				break;
-			end
-		end
-	end
-	CamConn = RunService.RenderStepped:Connect(function()
-		if not SpectateShadow then
-			return;
-		end
-		local camNow = workspace.CurrentCamera;
-		if not camNow then
-			return;
-		end
-		local shadow = GetShadowMan();
-		if not shadow then
-			local FlatIdent_229D1 = 0;
-			while true do
-				if (FlatIdent_229D1 == 0) then
-					ResetCamera();
-					return;
-				end
-			end
-		end
-		local head = shadow:FindFirstChild("Head");
-		if not head then
-			local FlatIdent_71E8F = 0;
-			while true do
-				if (FlatIdent_71E8F == 0) then
-					ResetCamera();
-					return;
-				end
-			end
-		end
-		camNow.CameraType = Enum.CameraType.Custom;
-		camNow.CameraSubject = head;
-	end);
+
+local function _strt()
+    local c=_0x2b.CurrentCamera
+    if not c then return end
+    _svcam()
+    if _cc then _cc:Disconnect();_cc=nil end
+    _cc=_svc2.RenderStepped:Connect(function()
+        if not _ss then return end
+        local cn=_0x2b.CurrentCamera
+        if not cn then return end
+        local sw=_gsm()
+        if not sw then _rscam();return end
+        local hd=sw:FindFirstChild(_S({72,101,97,100}))
+        if not hd then _rscam();return end
+        cn.CameraType=Enum.CameraType.Custom;cn.CameraSubject=hd
+    end)
 end
-TabOP:CreateToggle({Name="Spectate ShadowMan",CurrentValue=false,Flag="Chefin_SpectateShadowMan",Callback=function(Value)
-	local FlatIdent_51C44 = 0;
-	while true do
-		if (FlatIdent_51C44 == 0) then
-			SpectateShadow = Value == true;
-			if SpectateShadow then
-				pcall(function()
-					StartSpectate();
-				end);
-			else
-				pcall(function()
-					StopSpectate();
-				end);
-			end
-			break;
-		end
-	end
-end});
-TabESP:CreateToggle({Name="ShadowMan ESP",CurrentValue=false,Flag="Chefin_ShadowManESP",Callback=function(Value)
-	local FlatIdent_5E642 = 0;
-	while true do
-		if (FlatIdent_5E642 == 0) then
-			ShadowESPEnabled = Value;
-			if ShadowESPEnabled then
-				Shadow_Apply();
-				Shadow_StartWatcher();
-			else
-				Shadow_Clear();
-			end
-			break;
-		end
-	end
-end});
-TabESP:CreateToggle({Name="Jogadores ESP",CurrentValue=false,Flag="Chefin_PlayersESP",Callback=function(Value)
-	PlayersESPEnabled = Value;
-	if PlayersESPEnabled then
-		local FlatIdent_92514 = 0;
-		while true do
-			if (FlatIdent_92514 == 0) then
-				Player_StartWatcher();
-				for _, plr in ipairs(Players:GetPlayers()) do
-					if (plr ~= LocalPlayer) then
-						Player_ApplyToPlayer(plr);
-					end
-				end
-				break;
-			end
-		end
-	else
-		Player_Clear();
-	end
-end});
-TabESP:CreateToggle({Name="Itens ESP",CurrentValue=false,Flag="Chefin_ItemsESP",Callback=function(Value)
-	local FlatIdent_13B77 = 0;
-	while true do
-		if (0 == FlatIdent_13B77) then
-			ItemsESPEnabled = Value;
-			if ItemsESPEnabled then
-				Items_StartWatcher();
-			else
-				Items_Clear();
-			end
-			break;
-		end
-	end
-end});
-TabESP:CreateButton({Name="Fechar UI",Callback=function()
-	Rayfield:Destroy();
-end});
+
+_tab2:CreateToggle({
+    Name=_S({83,112,101,99,116,97,116,101,32,83,104,97,100,111,119,77,97,110}),
+    CurrentValue=false,
+    Flag=_S({67,104,101,102,105,110,95,83,112,101,99,116,97,116,101,83,104,97,100,111,119,77,97,110}),
+    Callback=function(v)
+        _ss=(v==true)
+        if _ss then _0x6f(function()_strt()end)
+        else _0x6f(function()_stsp()end)end
+    end,
+})
+
+-- ESP Toggles
+_tab1:CreateToggle({
+    Name=_S({83,104,97,100,111,119,77,97,110,32,69,83,80}),
+    CurrentValue=false,
+    Flag=_S({67,104,101,102,105,110,95,83,104,97,100,111,119,77,97,110,69,83,80}),
+    Callback=function(v)
+        _se=v
+        if _se then _sap();_swat()else _scl()end
+    end,
+})
+
+_tab1:CreateToggle({
+    Name=_S({74,111,103,97,100,111,114,101,115,32,69,83,80}),
+    CurrentValue=false,
+    Flag=_S({67,104,101,102,105,110,95,80,108,97,121,101,114,115,69,83,80}),
+    Callback=function(v)
+        _pe=v
+        if _pe then
+            _pwat()
+            for _,pl in _0x7g(_svc1:GetPlayers())do
+                if pl~=_lp then _patp(pl)end
+            end
+        else _pcl()end
+    end,
+})
+
+_tab1:CreateToggle({
+    Name=_S({73,116,101,110,115,32,69,83,80}),
+    CurrentValue=false,
+    Flag=_S({67,104,101,102,105,110,95,73,116,101,109,115,69,83,80}),
+    Callback=function(v)
+        _ie=v
+        if _ie then _iwat()else _icl()end
+    end,
+})
+
+_tab1:CreateButton({
+    Name=_S({70,101,99,104,97,114,32,85,73}),
+    Callback=function()_rf:Destroy()end,
+})
